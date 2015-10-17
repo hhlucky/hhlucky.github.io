@@ -1,5 +1,8 @@
 ---
+layout: post
 title: code quality improve
+published: true
+tags: code quality
 ---
 ## 坏的代码
 

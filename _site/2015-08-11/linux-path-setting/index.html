@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Linux PAHT Setting</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="Linux PAHT Setting,  linux,system,path, boundless" />
+    <meta name="description" content="Linux PAHT Setting,  linux,system,path, Ubuntu Linux 环境变量PATH设置" />
+
+    <link rel="shortcut icon" type="image/x-icon" media="screen" href="http://127.0.0.1:4000/static/favicon.ico" />
+    <link rel="canonical" href="http://127.0.0.1:4000/2015-08-11/linux-path-setting/" />
+    <link rel="alternate" type="application/rss+xml" title="boundless" href="http://127.0.0.1:4000/feed.xml"  />
+
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/octicons/octicons.css" />
+
+    
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/highlight.css" />
+    
+
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/post.css" />
+    
+</head>
+
+<body>
+<div class="main">
+
+    
+    
+    <header>
+        <nav class="navbar navbar-tiffany rectangle" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://127.0.0.1:4000/">boundless</a>
+                    <p class="navbar-text">Developer</p>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <li>
+                        <a href="http://127.0.0.1:4000/" class="word-keep"><span class="octicon octicon-book"></span></span>&nbsp;&nbsp;Blog</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="http://127.0.0.1:4000/archive/" class="word-keep"><span class="octicon octicon-repo"></span>&nbsp;&nbsp;Archive</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="http://127.0.0.1:4000/category/" class="word-keep"><span class="octicon octicon-list-unordered"></span>&nbsp;&nbsp;Category</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="http://127.0.0.1:4000/tags/" class="word-keep"><span class="octicon octicon-tag"></span>&nbsp;&nbsp;Tag</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a href="#stq=" class="search-button"><span class="octicon octicon-search"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <div class="row">
+    <div class="content col-lg-9">
+        <div class="sheet post">
+          <header>
+            <h2>Linux PAHT Setting</h2>
+            <p class="post-meta">
+                <span class="octicon octicon-clock"></span> Aug 11, 2015
+            </p>
+            <p class="post-tag">
+                <span></span>
+                <span>
+                    <a class="word-keep" href="http://127.0.0.1:4000/tags/#linux"><span class="octicon octicon-tag"></span>&nbsp;linux</a>
+                    
+                    <a class="word-keep" href="http://127.0.0.1:4000/tags/#system"><span class="octicon octicon-tag"></span>&nbsp;system</a>
+                    
+                    <a class="word-keep" href="http://127.0.0.1:4000/tags/#path"><span class="octicon octicon-tag"></span>&nbsp;path</a>
+                    
+                </span>
+            </p>
+          </header>
+          <hr class="boundary">
+          <article>
+            <h2 id="ubuntu-linux-环境变量path设置">Ubuntu Linux 环境变量PATH设置</h2>
+
+<h3 id="ubuntu-linux系统环境变量配置文件：">Ubuntu Linux系统环境变量配置文件：</h3>
+
+<p>/etc/profile : 在登录时,操作系统定制用户环境时使用的第一个文件 ,此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行。 </p>
+
+<p>/etc /environment : 在登录时操作系统使用的第二个文件, 系统在读取你自己的profile前,设置环境文件的环境变量。 </p>
+
+<p>~/.profile :  在登录时用到的第三个文件 是.profile文件,每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次!默认情况下,他设置一些环境变量,执行用户的.bashrc文件。</p>
+
+<p>/etc/bashrc : 为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取. </p>
+
+<p>~/.bashrc : 该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该该文件被读取。 </p>
+
+<h3 id="pash环境变量的设置方法：">PASH环境变量的设置方法：</h3>
+
+<h4 id="方法一：用户主目录下的-profile或-bashrc文件（推荐）">方法一：用户主目录下的.profile或.bashrc文件（推荐）</h4>
+
+<p>登录到你的用户（非root），在终端输入： </p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>sudo gedit ~/.profile<span class="o">(</span>or .bashrc<span class="o">)</span></code></pre></div>
+
+<p>可以在此文件末尾加入PATH的设置如下： </p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>”<span class="nv">$PATH</span>:your path1:your path2 ...”</code></pre></div>
+
+<p>保存文件，注销再登录，变量生效。 
+该方式添加的变量只对当前用户有效。 </p>
+
+<h4 id="方法二：系统目录下的profile文件（谨慎）">方法二：系统目录下的profile文件（谨慎）</h4>
+
+<p>在系统的etc目录下，有一个profile文件，编辑该文件： </p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>sudo gedit /etc/profile</code></pre></div>
+
+<p>在最后加入PATH的设置如下： </p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>”<span class="nv">$PATH</span>:your path1:your path2 ...”</code></pre></div>
+
+<p>该文件编辑保存后，重启系统，变量生效。 
+该方式添加的变量对所有的用户都有效。 </p>
+
+<h4 id="方法三：系统目录下的-environment-文件（谨慎）">方法三：系统目录下的 environment 文件（谨慎）</h4>
+
+<p>在系统的etc目录下，有一个environment文件，编辑该文件： </p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>sudo gedit /etc/environment</code></pre></div>
+
+<p>找到以下的 PATH 变量： 
+PATH=<q><......></q> 
+修改该 PATH 变量，在其中加入自己的path即可，例如： 
+PATH=<q><......>:your path1:your path2 …</q> 
+各个path之间用冒号分割。该文件也是重启生效，影响所有用户。 
+注意这里不是添加export PATH=… 。 </p>
+
+<h4 id="方法四：直接在终端下输入">方法四：直接在终端下输入</h4>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>sudo <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;$PATH:your path1:your path2 …&quot;</span></code></pre></div>
+
+<p>这种方式变量立即生效，但用户注销或系统重启后设置变成无效，适合临时变量的设置。 </p>
+
+<blockquote>
+<p>注 意：方法二和三的修改需要谨慎，尤其是通过root用户修改，如果修改错误，将可能导致一些严重的系统错误。因此笔者推荐使用第一种方法。另外嵌入式 Linux的开发最好不要在root下进行（除非你对Linux已经非常熟悉了！！），以免因为操作不当导致系统严重错误。</p>
+</blockquote>
+
+<p>下面是一个对environment文件错误修改导致的问题以及解决方法示例： </p>
+
+<p>问题：因为不小心在 etc/environment里设在环境变量导致无法登录 
+提示：不要在 etc/environment里设置 export PATH这样会导致重启后登录不了系统 
+解决方法： 
+在登录界面 alt +ctrl+f1进入命令模式，如果不是root用户需要键入（root用户就不许这么罗嗦，gedit编辑会不可显示） 
+/usr/bin/sudo /usr/bin/vi /etc/environment 
+光标移到export PATH** 行，连续按 d两次删除该行； 
+输入:wq保存退出； 
+然后键入/sbin/reboot重启系统（可能会提示need to boot，此时直接power off）</p>
+
+          </article>
+          <hr class="boundary">
+          <div id="post-share" class="bdsharebuttonbox">
+              <a href="#" class="bds_more" data-cmd="more"></a>
+              <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+              <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+              <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+              <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+              <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+          </div>
+        </div>
+        <div class="pad-min"></div>
+        <div id="post-comment" class="sheet post">
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+    <div class="content-navigation col-lg-3">
+      <div class="shadow-bottom-center" >
+        <div class="content-navigation-toc">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Toc
+            </div>
+            <div class="content-navigation-list toc"></div>
+        </div>
+        <div class="content-navigation-tag">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Tags
+            </div>
+            <div class="content-navigation-list">
+                <ul>
+                    
+                    <li>
+                        <a href="http://127.0.0.1:4000/tags#linux"><span class="octicon octicon-tag"></span>&nbsp;linux</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://127.0.0.1:4000/tags#system"><span class="octicon octicon-tag"></span>&nbsp;system</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://127.0.0.1:4000/tags#path"><span class="octicon octicon-tag"></span>&nbsp;path</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="content-navigation-related">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Related
+            </div>
+            <div class="content-navigation-list">
+                <ul>
+                    
+
+                    
+                        
+                            
+
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+
+                            
+
+                            
+                                
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                                    
+                                
+                            
+
+                            
+
+                            
+                                
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+
+                    
+                        
+                            <li>
+                                <a href="http://127.0.0.1:4000/2015-08-14/linux/">Linux下查看系统信息</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://127.0.0.1:4000/2015-06-27/linux-learning/">Linux Learning</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+    </div>
+
+    <div class="page-scrollTop" data-toggle="tooltip" data-placement="top" title="Top">
+        <a href="javascript:void(0);">
+            <div class="arrow"></div>
+            <div class="stick"></div>
+        </a>
+    </div>
+</div>
+
+    <footer  class="footnote footnote-tiffany">
+        <div class="container">
+                <a class="foot-item" href="mailto:hhlucky@yeah.net" target="_blank"><span class="octicon octicon-mail"></span></a>
+                <a class="foot-item" href="https://github.com/hhlucky" target="_blank"><span class="octicon octicon-mark-github"></span></a>
+                <a class="foot-item" href="http://127.0.0.1:4000/feed.xml" target="_blank"><span class="octicon octicon-rss"></span></a>
+                <a class="foot-item" href="http://127.0.0.1:4000/link/"><span class="octicon octicon-link-external"></span></a>
+                &nbsp;
+                <a href="http://hhlucky.github.io/"><span class="word-keep">&copy; hhlucky</span></a>
+        </div>
+    </footer>
+
+
+<div class="scriptHub">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/script.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/toc.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/post.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

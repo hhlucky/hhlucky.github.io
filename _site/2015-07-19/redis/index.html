@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Redis Learning</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="Redis Learning,  redis, boundless" />
+    <meta name="description" content="Redis Learning,  redis, Redis 是一个 Key-Value 存储系统。和 Memcached 类似,它支持存储的 value 类型相对更多,包括 string(字符串)、list(链表)、set(集合)和 zset(有序集合)。这些数据类型都支持 push/pop、add/remove 及取交集并集和差集及更丰富的操作,而且这些操作..." />
+
+    <link rel="shortcut icon" type="image/x-icon" media="screen" href="http://127.0.0.1:4000/static/favicon.ico" />
+    <link rel="canonical" href="http://127.0.0.1:4000/2015-07-19/redis/" />
+    <link rel="alternate" type="application/rss+xml" title="boundless" href="http://127.0.0.1:4000/feed.xml"  />
+
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/octicons/octicons.css" />
+
+    
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/highlight.css" />
+    
+
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/post.css" />
+    
+</head>
+
+<body>
+<div class="main">
+
+    
+    
+    <header>
+        <nav class="navbar navbar-tiffany rectangle" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://127.0.0.1:4000/">boundless</a>
+                    <p class="navbar-text">Developer</p>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <li>
+                        <a href="http://127.0.0.1:4000/" class="word-keep"><span class="octicon octicon-book"></span></span>&nbsp;&nbsp;Blog</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="http://127.0.0.1:4000/archive/" class="word-keep"><span class="octicon octicon-repo"></span>&nbsp;&nbsp;Archive</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="http://127.0.0.1:4000/category/" class="word-keep"><span class="octicon octicon-list-unordered"></span>&nbsp;&nbsp;Category</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="http://127.0.0.1:4000/tags/" class="word-keep"><span class="octicon octicon-tag"></span>&nbsp;&nbsp;Tag</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a href="#stq=" class="search-button"><span class="octicon octicon-search"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <div class="row">
+    <div class="content col-lg-9">
+        <div class="sheet post">
+          <header>
+            <h2>Redis Learning</h2>
+            <p class="post-meta">
+                <span class="octicon octicon-clock"></span> Jul 19, 2015
+            </p>
+            <p class="post-tag">
+                <span></span>
+                <span>
+                    <a class="word-keep" href="http://127.0.0.1:4000/tags/#redis"><span class="octicon octicon-tag"></span>&nbsp;redis</a>
+                    
+                </span>
+            </p>
+          </header>
+          <hr class="boundary">
+          <article>
+            <p>Redis 是一个 Key-Value 存储系统。和 Memcached 类似,它支持存储的 value 类型相对更多,包括 string(字符串)、list(链表)、set(集合)和 zset(有序集合)。这些数据类型都支持 push/pop、add/remove 及取交集并集和差集及更丰富的操作,而且这些操作都是原子性的。在此基础上,Redis 支持各种不同方式的排序。与 memcached 一样,为了保证效率,数据都是缓存在内存中。区别的是 Redis 会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件,并且在此基础上实现了 master-slave(主从)同步。</p>
+
+<h3 id="nosql介绍">NoSQL介绍</h3>
+
+<h3 id="数据类型">数据类型</h3>
+
+<ul>
+<li>String类型</li>
+<li> Lists 列表</li>
+<li> Sets 集合</li>
+<li> Sorted sets 有序集合</li>
+<li> Hashes 哈希表</li>
+</ul>
+
+          </article>
+          <hr class="boundary">
+          <div id="post-share" class="bdsharebuttonbox">
+              <a href="#" class="bds_more" data-cmd="more"></a>
+              <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+              <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+              <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+              <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+              <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+          </div>
+        </div>
+        <div class="pad-min"></div>
+        <div id="post-comment" class="sheet post">
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+    <div class="content-navigation col-lg-3">
+      <div class="shadow-bottom-center" >
+        <div class="content-navigation-toc">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Toc
+            </div>
+            <div class="content-navigation-list toc"></div>
+        </div>
+        <div class="content-navigation-tag">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Tags
+            </div>
+            <div class="content-navigation-list">
+                <ul>
+                    
+                    <li>
+                        <a href="http://127.0.0.1:4000/tags#redis"><span class="octicon octicon-tag"></span>&nbsp;redis</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="content-navigation-related">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Related
+            </div>
+            <div class="content-navigation-list">
+                <ul>
+                    
+
+                    
+                        
+                            
+
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+    </div>
+
+    <div class="page-scrollTop" data-toggle="tooltip" data-placement="top" title="Top">
+        <a href="javascript:void(0);">
+            <div class="arrow"></div>
+            <div class="stick"></div>
+        </a>
+    </div>
+</div>
+
+    <footer  class="footnote footnote-tiffany">
+        <div class="container">
+                <a class="foot-item" href="mailto:hhlucky@yeah.net" target="_blank"><span class="octicon octicon-mail"></span></a>
+                <a class="foot-item" href="https://github.com/hhlucky" target="_blank"><span class="octicon octicon-mark-github"></span></a>
+                <a class="foot-item" href="http://127.0.0.1:4000/feed.xml" target="_blank"><span class="octicon octicon-rss"></span></a>
+                <a class="foot-item" href="http://127.0.0.1:4000/link/"><span class="octicon octicon-link-external"></span></a>
+                &nbsp;
+                <a href="http://hhlucky.github.io/"><span class="word-keep">&copy; hhlucky</span></a>
+        </div>
+    </footer>
+
+
+<div class="scriptHub">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/script.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/toc.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/post.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

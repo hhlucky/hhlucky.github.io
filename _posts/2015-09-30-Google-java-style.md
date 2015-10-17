@@ -1,5 +1,7 @@
 ---
+layout: post
 title: Google Java编程风格指南
+published: true
 ---
 
 ### 前言

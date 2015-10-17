@@ -1,5 +1,8 @@
 ---
+layout: post
 title: Spring Learning
+published: true
+tags: java spring
 ---
 
 ![Spring Ioc interface design](/img/spring_learning_images/ioc_interface.jpg "Spring Ioc interface design")

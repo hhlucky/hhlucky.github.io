@@ -1,5 +1,8 @@
 ---
+layout: post
 title: Linux PAHT Setting
+published: true
+tags: linux system path
 ---
 
 

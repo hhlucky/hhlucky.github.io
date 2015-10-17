@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Spring Learning</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="Spring Learning,  java,spring, boundless" />
+    <meta name="description" content="Spring Learning,  java,spring, " />
+
+    <link rel="shortcut icon" type="image/x-icon" media="screen" href="http://127.0.0.1:4000/static/favicon.ico" />
+    <link rel="canonical" href="http://127.0.0.1:4000/2015-08-10/spring-learning/" />
+    <link rel="alternate" type="application/rss+xml" title="boundless" href="http://127.0.0.1:4000/feed.xml"  />
+
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/octicons/octicons.css" />
+
+    
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/highlight.css" />
+    
+
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/post.css" />
+    
+</head>
+
+<body>
+<div class="main">
+
+    
+    
+    <header>
+        <nav class="navbar navbar-tiffany rectangle" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://127.0.0.1:4000/">boundless</a>
+                    <p class="navbar-text">Developer</p>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <li>
+                        <a href="http://127.0.0.1:4000/" class="word-keep"><span class="octicon octicon-book"></span></span>&nbsp;&nbsp;Blog</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="http://127.0.0.1:4000/archive/" class="word-keep"><span class="octicon octicon-repo"></span>&nbsp;&nbsp;Archive</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="http://127.0.0.1:4000/category/" class="word-keep"><span class="octicon octicon-list-unordered"></span>&nbsp;&nbsp;Category</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="http://127.0.0.1:4000/tags/" class="word-keep"><span class="octicon octicon-tag"></span>&nbsp;&nbsp;Tag</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a href="#stq=" class="search-button"><span class="octicon octicon-search"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <div class="row">
+    <div class="content col-lg-9">
+        <div class="sheet post">
+          <header>
+            <h2>Spring Learning</h2>
+            <p class="post-meta">
+                <span class="octicon octicon-clock"></span> Aug 10, 2015
+            </p>
+            <p class="post-tag">
+                <span></span>
+                <span>
+                    <a class="word-keep" href="http://127.0.0.1:4000/tags/#java"><span class="octicon octicon-tag"></span>&nbsp;java</a>
+                    
+                    <a class="word-keep" href="http://127.0.0.1:4000/tags/#spring"><span class="octicon octicon-tag"></span>&nbsp;spring</a>
+                    
+                </span>
+            </p>
+          </header>
+          <hr class="boundary">
+          <article>
+            <p><img src="/img/spring_learning_images/ioc_interface.jpg" alt="Spring Ioc interface design" title="Spring Ioc interface design"></p>
+
+<ul>
+<li>从接口BeanFactory到HierarchicalBeanFactory，再到ConfigurableBeanFactory，是一条主要的BeanFactory设计路径。在这条接口设计路径中，BeanFactory接口定义了基本的IoC容器的规范。在这个接口定义中，包括了getBean()这样的IoC容器的基本方法（通过这个方法可以从容器中取得Bean）。而HierarchicalBeanFactory接口在继承了BeanFactory的基本接口之后，增加了getParentBeanFactory()的接口功能，使BeanFactory具备了双亲IoC容器的管理功能。在接下来的ConfigurableBeanFactory接口中，主要定义了一些对BeanFactory的配置功能，比如通过setParentBeanFactory()设置双亲IoC容器，通过addBeanPostProcessor()配置Bean后置处理器，等等。通过这些接口设计的叠加，定义了BeanFactory就是简单IoC容器的基本功能。关于BeanFactory简单IoC容器的设计，我们会在后面的内容中详细介绍。</li>
+<li>第二条接口设计主线是，以ApplicationContext应用上下文接口为核心的接口设计，这里涉及的主要接口设计有，从BeanFactory到ListableBeanFactory，再到ApplicationContext，再到我们常用的WebApplicationContext或者ConfigurableApplicationContext接口。我们常用的应用上下文基本上都是ConfigurableApplicationContext或者WebApplicationContext的实现。在这个接口体系中，ListableBeanFactory和HierarchicalBeanFactory两个接口，连接BeanFactory接口定义和ApplicationConext应用上下文的接口定义。在ListableBeanFactory接口中，细化了许多BeanFactory的接口功能，比如定义了getBeanDefinitionNames()接口方法；对于HierarchicalBeanFactory接口，我们在前文中已经提到过；对于ApplicationContext接口，它通过继承MessageSource、ResourceLoader、ApplicationEventPublisher接口，在BeanFactory简单IoC容器的基础上添加了许多对高级容器的特性的支持。</li>
+<li>这里涉及的是主要接口关系，而具体的IoC容器都是在这个接口体系下实现的，比如DefaultListableBeanFactory，这个基本IoC容器的实现就是实现了ConfigurableBeanFactory，从而成为一个简单IoC容器的实现。像其他IoC容器，比如XmlBeanFactory，都是在DefaultListableBeanFactory的基础上做扩展，同样地，ApplicationContext的实现也是如此。</li>
+<li>这个接口系统是以BeanFactory和ApplicationContext为核心的。而BeanFactory又是IoC容器的最基本接口，在ApplicationContext的设计中，一方面，可以看到它继承了BeanFactory接口体系中的ListableBeanFactory、AutowireCapableBeanFactory、HierarchicalBeanFactory等BeanFactory的接口，具备了BeanFactory IoC容器的基本功能；另一方面，通过继承MessageSource、ResourceLoadr、ApplicationEventPublisher这些接口，BeanFactory为ApplicationContext赋予了更高级的IoC容器特性。对于ApplicationContext而言，为了在Web环境中使用它，还设计了WebApplicationContext接口，而这个接口通过继承ThemeSource接口来扩充功能。</li>
+</ul>
+
+          </article>
+          <hr class="boundary">
+          <div id="post-share" class="bdsharebuttonbox">
+              <a href="#" class="bds_more" data-cmd="more"></a>
+              <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+              <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+              <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+              <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+              <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+          </div>
+        </div>
+        <div class="pad-min"></div>
+        <div id="post-comment" class="sheet post">
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+    <div class="content-navigation col-lg-3">
+      <div class="shadow-bottom-center" >
+        <div class="content-navigation-toc">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Toc
+            </div>
+            <div class="content-navigation-list toc"></div>
+        </div>
+        <div class="content-navigation-tag">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Tags
+            </div>
+            <div class="content-navigation-list">
+                <ul>
+                    
+                    <li>
+                        <a href="http://127.0.0.1:4000/tags#java"><span class="octicon octicon-tag"></span>&nbsp;java</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://127.0.0.1:4000/tags#spring"><span class="octicon octicon-tag"></span>&nbsp;spring</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="content-navigation-related">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Related
+            </div>
+            <div class="content-navigation-list">
+                <ul>
+                    
+
+                    
+                        
+                            
+
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                                
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+                        
+                            
+
+                            
+                                
+                            
+                                
+                            
+
+                            
+                                
+                            
+
+                            
+                        
+                    
+
+                    
+                        
+                            <li>
+                                <a href="http://127.0.0.1:4000/2015-03-12/spring-security/">spring security 探秘</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+    </div>
+
+    <div class="page-scrollTop" data-toggle="tooltip" data-placement="top" title="Top">
+        <a href="javascript:void(0);">
+            <div class="arrow"></div>
+            <div class="stick"></div>
+        </a>
+    </div>
+</div>
+
+    <footer  class="footnote footnote-tiffany">
+        <div class="container">
+                <a class="foot-item" href="mailto:hhlucky@yeah.net" target="_blank"><span class="octicon octicon-mail"></span></a>
+                <a class="foot-item" href="https://github.com/hhlucky" target="_blank"><span class="octicon octicon-mark-github"></span></a>
+                <a class="foot-item" href="http://127.0.0.1:4000/feed.xml" target="_blank"><span class="octicon octicon-rss"></span></a>
+                <a class="foot-item" href="http://127.0.0.1:4000/link/"><span class="octicon octicon-link-external"></span></a>
+                &nbsp;
+                <a href="http://hhlucky.github.io/"><span class="word-keep">&copy; hhlucky</span></a>
+        </div>
+    </footer>
+
+
+<div class="scriptHub">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/script.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/toc.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/post.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

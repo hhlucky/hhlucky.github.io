@@ -1,5 +1,8 @@
 ---
+layout: post
 title: 让pandoc输出pdf时支持中文
+published: true
+tags: pandoc
 ---
 
 主机环境为：Ubuntu 12.04 LTS。对于RH系列，yum安装包的名称可能会有不同，不过yum联想能力比较强，应该不是问题。
