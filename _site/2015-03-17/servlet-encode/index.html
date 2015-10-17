@@ -9,19 +9,19 @@
     <meta name="keywords" content="Servlet乱码分析, web, servlet,encode,Java, boundless" />
     <meta name="description" content="Servlet乱码分析, web, servlet,encode,Java, 我们知道，web浏览器会将form中的内容打包成HTTP请求体，然后发送到服务端，服务端对请求体解析后可以得到传递的数据。这当中包含两个过程：encode与decode。" />
 
-    <link rel="shortcut icon" type="image/x-icon" media="screen" href="http://127.0.0.1:4000/static/favicon.ico" />
-    <link rel="canonical" href="http://127.0.0.1:4000/2015-03-17/servlet-encode/" />
-    <link rel="alternate" type="application/rss+xml" title="boundless" href="http://127.0.0.1:4000/feed.xml"  />
+    <link rel="shortcut icon" type="image/x-icon" media="screen" href="http://hhlucky.githut.io/static/favicon.ico" />
+    <link rel="canonical" href="http://hhlucky.githut.io/2015-03-17/servlet-encode/" />
+    <link rel="alternate" type="application/rss+xml" title="boundless" href="http://hhlucky.githut.io/feed.xml"  />
 
     <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/octicons/octicons.css" />
+    <link rel="stylesheet" type="text/css" href="http://hhlucky.githut.io/static/octicons/octicons.css" />
 
     
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="http://hhlucky.githut.io/static/css/highlight.css" />
     
 
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/static/css/post.css" />
+    <link rel="stylesheet" type="text/css" href="http://hhlucky.githut.io/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://hhlucky.githut.io/static/css/post.css" />
     
 </head>
 
@@ -39,31 +39,31 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://127.0.0.1:4000/">boundless</a>
+                    <a class="navbar-brand" href="http://hhlucky.githut.io/">boundless</a>
                     <p class="navbar-text">Developer</p>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         
                         <li>
-                        <a href="http://127.0.0.1:4000/" class="word-keep"><span class="octicon octicon-book"></span></span>&nbsp;&nbsp;Blog</a>
+                        <a href="http://hhlucky.githut.io/" class="word-keep"><span class="octicon octicon-book"></span></span>&nbsp;&nbsp;Blog</a>
                         </li>
                         
                         
                         <li>
-                            <a href="http://127.0.0.1:4000/archive/" class="word-keep"><span class="octicon octicon-repo"></span>&nbsp;&nbsp;Archive</a>
-                        </li>
-                        
-                        
-                        
-                        <li>
-                            <a href="http://127.0.0.1:4000/category/" class="word-keep"><span class="octicon octicon-list-unordered"></span>&nbsp;&nbsp;Category</a>
+                            <a href="http://hhlucky.githut.io/archive/" class="word-keep"><span class="octicon octicon-repo"></span>&nbsp;&nbsp;Archive</a>
                         </li>
                         
                         
                         
                         <li>
-                            <a href="http://127.0.0.1:4000/tags/" class="word-keep"><span class="octicon octicon-tag"></span>&nbsp;&nbsp;Tag</a>
+                            <a href="http://hhlucky.githut.io/category/" class="word-keep"><span class="octicon octicon-list-unordered"></span>&nbsp;&nbsp;Category</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="http://hhlucky.githut.io/tags/" class="word-keep"><span class="octicon octicon-tag"></span>&nbsp;&nbsp;Tag</a>
                         </li>
                         
                         
@@ -99,13 +99,13 @@
                 <span class="octicon octicon-clock"></span> Mar 17, 2015
             </p>
             <p class="post-tag">
-                <span><a href="http://127.0.0.1:4000/category/#web"><span class="octicon octicon-list-unordered"></span>&nbsp;web</a></span>
+                <span><a href="http://hhlucky.githut.io/category/#web"><span class="octicon octicon-list-unordered"></span>&nbsp;web</a></span>
                 <span>
-                    <a class="word-keep" href="http://127.0.0.1:4000/tags/#servlet"><span class="octicon octicon-tag"></span>&nbsp;servlet</a>
+                    <a class="word-keep" href="http://hhlucky.githut.io/tags/#servlet"><span class="octicon octicon-tag"></span>&nbsp;servlet</a>
                     
-                    <a class="word-keep" href="http://127.0.0.1:4000/tags/#encode"><span class="octicon octicon-tag"></span>&nbsp;encode</a>
+                    <a class="word-keep" href="http://hhlucky.githut.io/tags/#encode"><span class="octicon octicon-tag"></span>&nbsp;encode</a>
                     
-                    <a class="word-keep" href="http://127.0.0.1:4000/tags/#Java"><span class="octicon octicon-tag"></span>&nbsp;Java</a>
+                    <a class="word-keep" href="http://hhlucky.githut.io/tags/#Java"><span class="octicon octicon-tag"></span>&nbsp;Java</a>
                     
                 </span>
             </p>
@@ -159,11 +159,11 @@
 
 <p>get</p>
 
-<p><img src="http://127.0.0.1:4000/static/img/servlet-encode/get.png" alt="get"></p>
+<p><img src="http://hhlucky.github.io/static/img/servlet-encode/get.png" alt="get"></p>
 
 <p>post</p>
 
-<p><img src="http://127.0.0.1:4000/static/img/servlet-encode/post.png" alt="post"></p>
+<p><img src="http://hhlucky.github.io/static/img/servlet-encode/post.png" alt="post"></p>
 
 <p>从post中的<code class="prettyprint">Content-Type:application/x-www-form-urlencoded</code>可以看到，虽然数据为中文，但是在传递的时候，经过了一次urlEncode，这样一来，在数据交换层面就可以屏蔽编码的不一致性。</p>
 
@@ -202,7 +202,7 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
 </code></pre></div>
 <p>get与post结果如下，果然不负众望地乱码了(如果不乱码，我还写个毛？)。</p>
 
-<p><img src="http://127.0.0.1:4000/static/img/servlet-encode/param.png" alt="param"></p>
+<p><img src="http://hhlucky.github.io/static/img/servlet-encode/param.png" alt="param"></p>
 
 <p>现在我们从Servlet中看看请求体, 修改上面的Servlet代码如下：</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HttpServletPrint</span> <span class="kd">extends</span> <span class="n">HttpServlet</span><span class="o">{</span>
@@ -230,13 +230,13 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
 <p>get与post结果如下,Servlet将http头部解析完成后，将请求体留了下来供应用程序使用, 这是考虑到http请求可能有多种 <a href="http://www.w3school.com.cn/tags/att_form_enctype.asp">enctype</a> , 请求体的结构可能不同,
 例如，<code class="prettyprint">multipart/form-data</code>就不是这样的key=value结构，关于multipart/form-data，我在这篇 <a href="http://blog.rainynight.top/2014-04-15/fileupload/">fileupload</a> 中曾有过简要分析。</p>
 
-<p><img src="http://127.0.0.1:4000/static/img/servlet-encode/body-utf.png" alt="body-utf"></p>
+<p><img src="http://hhlucky.github.io/static/img/servlet-encode/body-utf.png" alt="body-utf"></p>
 
 <p>从图中可以看到, 设置了正确的字符集后, 服务端将能够正确地解析, get部分什么都没有，这是因为get没有请求体。</p>
 
 <p>让我们换种字符集试试, 比如, 将servet中的<q>utf-8</q>换成<q>iso-8859-1</q>。</p>
 
-<p><img src="http://127.0.0.1:4000/static/img/servlet-encode/body-iso.png" alt="body-iso"></p>
+<p><img src="http://hhlucky.github.io/static/img/servlet-encode/body-iso.png" alt="body-iso"></p>
 
 <p>嘿，果然如我所料，而且这个字符串好像很眼熟，和req.getParameter(<q>param</q>)结果是一样的，没错，事实上，tomcat默认的字符集就是<code class="prettyprint">iso-8859-1</code>, 我们从中可以得到一个推论，tomcat使用默认的字符集，对http请求进行过一次decode。</p>
 
@@ -252,7 +252,7 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
 
 <p>为什么要 <a href="http://www.w3school.com.cn/jsref/jsref_encodeuri.asp">encodeURI</a> 两次？talk is cheap， let&#39;s code！</p>
 
-<p><img src="http://127.0.0.1:4000/static/img/servlet-encode/encodeURI.png" alt="encodeURI"></p>
+<p><img src="http://hhlucky.github.io/static/img/servlet-encode/encodeURI.png" alt="encodeURI"></p>
 
 <p>注意观察这张图片，从中发现了什么? 没错，第一次encodeURI生成了HTTP一节的示例中一样的结果。
 我们在浏览器窗口中输入 <q>http://localhost:8080/hsp?param=%E4%BD%A0%E5%A5%BD%E5%85%A8%E4%B8%96%E7%95%8C</q>, 会发现它变成了 <q>http://localhost:8080/hsp?param=你好全世界</q>,
@@ -265,7 +265,7 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">URLDecoder</span><span class="o">.</span><span class="na">decode</span><span class="o">(</span><span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&quot;param&quot;</span><span class="o">),</span><span class="s">&quot;utf-8&quot;</span><span class="o">));</span>
 </code></pre></div><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://localhost:8080/hsp?param=&quot;</span> <span class="o">+</span> <span class="nb">encodeURI</span><span class="p">(</span><span class="nb">encodeURI</span><span class="p">(</span><span class="s1">&#39;你好全世界&#39;</span><span class="p">));</span>
 </code></pre></div>
-<p><img src="http://127.0.0.1:4000/static/img/servlet-encode/world.png" alt="world"></p>
+<p><img src="http://hhlucky.github.io/static/img/servlet-encode/world.png" alt="world"></p>
 
           </article>
           <hr class="boundary">
@@ -299,15 +299,15 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
                 <ul>
                     
                     <li>
-                        <a href="http://127.0.0.1:4000/tags#servlet"><span class="octicon octicon-tag"></span>&nbsp;servlet</a>
+                        <a href="http://hhlucky.githut.io/tags#servlet"><span class="octicon octicon-tag"></span>&nbsp;servlet</a>
                     </li>
                     
                     <li>
-                        <a href="http://127.0.0.1:4000/tags#encode"><span class="octicon octicon-tag"></span>&nbsp;encode</a>
+                        <a href="http://hhlucky.githut.io/tags#encode"><span class="octicon octicon-tag"></span>&nbsp;encode</a>
                     </li>
                     
                     <li>
-                        <a href="http://127.0.0.1:4000/tags#Java"><span class="octicon octicon-tag"></span>&nbsp;Java</a>
+                        <a href="http://hhlucky.githut.io/tags#Java"><span class="octicon octicon-tag"></span>&nbsp;Java</a>
                     </li>
                     
                 </ul>
@@ -1220,63 +1220,63 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
                     
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2015-04-09/rmi/">RMI</a>
+                                <a href="http://hhlucky.githut.io/2015-04-09/rmi/">RMI</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2015-03-12/spring-security/">spring security 探秘</a>
+                                <a href="http://hhlucky.githut.io/2015-03-12/spring-security/">spring security 探秘</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2015-03-05/validator/">Bean Validation</a>
+                                <a href="http://hhlucky.githut.io/2015-03-05/validator/">Bean Validation</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2015-02-22/javajs/">Java中用js解析json</a>
+                                <a href="http://hhlucky.githut.io/2015-02-22/javajs/">Java中用js解析json</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2015-02-13/sqlappend/">SQL 拼接</a>
+                                <a href="http://hhlucky.githut.io/2015-02-13/sqlappend/">SQL 拼接</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2014-12-21/webservice/">WebService</a>
+                                <a href="http://hhlucky.githut.io/2014-12-21/webservice/">WebService</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2014-12-13/java-newfeature/">Java8 新特性</a>
+                                <a href="http://hhlucky.githut.io/2014-12-13/java-newfeature/">Java8 新特性</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2014-11-18/java-concurrent/">Java Concurrent</a>
+                                <a href="http://hhlucky.githut.io/2014-11-18/java-concurrent/">Java Concurrent</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2014-08-20/jvm/">Java虚拟机</a>
+                                <a href="http://hhlucky.githut.io/2014-08-20/jvm/">Java虚拟机</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2014-06-26/effective/">Effective Java</a>
+                                <a href="http://hhlucky.githut.io/2014-06-26/effective/">Effective Java</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2014-05-12/acturl-generic/">超类中的泛型</a>
+                                <a href="http://hhlucky.githut.io/2014-05-12/acturl-generic/">超类中的泛型</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2014-04-15/fileupload/">Custom Fileupload</a>
+                                <a href="http://hhlucky.githut.io/2014-04-15/fileupload/">Custom Fileupload</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2014-03-22/reentrantlock/">可重入锁</a>
+                                <a href="http://hhlucky.githut.io/2014-03-22/reentrantlock/">可重入锁</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2014-03-16/tomcat-https/">Tomcat Https 配置</a>
+                                <a href="http://hhlucky.githut.io/2014-03-16/tomcat-https/">Tomcat Https 配置</a>
                             </li>
                         
                             <li>
-                                <a href="http://127.0.0.1:4000/2014-03-13/resubmit/">防止重复提交的几种办法</a>
+                                <a href="http://hhlucky.githut.io/2014-03-13/resubmit/">防止重复提交的几种办法</a>
                             </li>
                         
                     
@@ -1300,8 +1300,8 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
         <div class="container">
                 <a class="foot-item" href="mailto:hhlucky@yeah.net" target="_blank"><span class="octicon octicon-mail"></span></a>
                 <a class="foot-item" href="https://github.com/hhlucky" target="_blank"><span class="octicon octicon-mark-github"></span></a>
-                <a class="foot-item" href="http://127.0.0.1:4000/feed.xml" target="_blank"><span class="octicon octicon-rss"></span></a>
-                <a class="foot-item" href="http://127.0.0.1:4000/link/"><span class="octicon octicon-link-external"></span></a>
+                <a class="foot-item" href="http://hhlucky.githut.io/feed.xml" target="_blank"><span class="octicon octicon-rss"></span></a>
+                <a class="foot-item" href="http://hhlucky.githut.io/link/"><span class="octicon octicon-link-external"></span></a>
                 &nbsp;
                 <a href="http://hhlucky.github.io/"><span class="word-keep">&copy; hhlucky</span></a>
         </div>
@@ -1311,9 +1311,9 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
 <div class="scriptHub">
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.js"></script>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/script.js"></script>
-    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/toc.js"></script>
-    <script type="text/javascript" src="http://127.0.0.1:4000/static/js/post.js"></script>
+    <script type="text/javascript" src="http://hhlucky.githut.io/static/js/script.js"></script>
+    <script type="text/javascript" src="http://hhlucky.githut.io/static/js/toc.js"></script>
+    <script type="text/javascript" src="http://hhlucky.githut.io/static/js/post.js"></script>
     
 </div>
 
