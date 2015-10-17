@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="0;0">
+	<meta name="changed" content="20150810;203121359536069">
+</head>
+<body lang="zh-CN" dir="ltr" style="background: transparent">
+<p>近期，好屋中国官网<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">app</span></font></span></font>项目（下称“官网<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">app”</span></font></span></font>）如期上线，项目一期正式告一段落。这一期官网<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">app</span></font></span></font>项目核心是一个面向<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">C</span></font></span></font>端用户的新房二手房交易<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">app</span></font></span></font>，工作量也主要集中在<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">app</span></font></span></font>及其后台服务。但这一期项目相关联的系统及业务却非常广泛，包括<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">HOSS</span></font></span></font>、合伙人<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">app</span></font></span></font>、内部合伙人、外部合伙人、助理宝、抢钱宝，基本上关于新房二手房各个产品线上的产品和系统都有新增需求和业务变更，整个工程的复杂度可想而知。系统的设计开发测试及上线准备持续大约一个月，执行过程也遇到了大大小小的包括技术、业务、管理等等各种问题，但总的来说比较顺利，产品质量也比较高。这与各个小组成员的辛勤劳动和密切配合是密不可分。这期项目中，我带领官网<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">app</span></font></span></font>和合伙人<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">app</span></font></span></font>（包括助理宝、抢钱宝等）团队，主要完成了官网<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">app</span></font></span></font>后台（包括官网<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">app</span></font></span></font>运营）及合伙人（包括内部合伙人
+外部合伙人）、助理宝、抢钱宝和抢客宝的新系统研发及已有系统的变更和维护。团队人数<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">12</span></font></span></font>个人以上，其中有一半以上成员是刚加入的新员工，时间紧，任务重；另外，第一次集成单点登录，第一次通过公共服务集成在线支付；再加上，项目过程中，合伙人及助理宝业务需求并行开发和上线。团队大，业务复杂，对我来说都是第一次，因此，要管理好团队按时保质保量按时上线，对我也是不小的挑战。在此，我对这次项目做一个小小的总结，总结经验，以为下一次项目执行更臻完善；吸取教训，以防再犯同样的错误。</p>
+<h2><a name="经验总结"></a>经验总结</h2>
+<h3><a name="充分发挥团队的力量"></a>充分发挥团队的力量</h3>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">1.</span></font></span></font>充满信心的将工作任务分配给团队成员，包括任务工作量评估、系统的设计、小组间的沟通协调等工作</p>
+<blockquote>这样不但可以提高工作效率，也可以是团队成员得到综合能力的锻炼</blockquote>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">2.</span></font></span></font>通过复审和检查保证工作质量</p>
+<blockquote>通过复核和检查，并及时沟通，不但可以保证质量，可以使团队成员了解工作不足之处，失误的地方，同事能更充分的了解整个系统，不断提高工作效率和完善工作质量</blockquote>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">3.</span></font></span></font>畅所欲言，每个成员都可以提出好工作的方法，指出团队及个人的有待提高指出</p>
+<h3><a name="团队实行以新带旧的结对模式组织"></a>团队实行以新带旧的结对模式组织</h3>
+<p>首先，敏捷开发里的结对编程就是一个管理原则和工作方式，其好处不言而喻；</p>
+<p>其次，老带新，可以保证新入职员工对业务能够充分理解，并注意其中的关键点，不至于走弯路；同时，老员工也可以从新员工那里学习到解决问题的新的思路和方法；</p>
+<p>再次，可以充分发挥团队的力量，两个人组成一个小团队，分担部分的管理和沟通的工作；</p>
+<p>最后，老员工可以锻炼自己的协调沟通甚至是管理方法的能力。</p>
+<h3><a name="保持上下左右四面八方及时沟通"></a>保持上下左右四面八方及时沟通</h3>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">1.</span></font></span></font><strong>上</strong>是指向上的沟通，无论是技术实现，业务需求，还是团队协作，沟通管理，只要我们处理不了的就要及时向上反馈，就像代码里的异常处理</p>
+<p>这样的代码最危险： 
+</p>
+<p><br><br>
+</p>
+<p>好的处理方式如下： 
+</p>
+<p><br><br>
+</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">2.</span></font></span></font><strong>下</strong>
+是指向下的沟通，及时了解员工的工作进展，困难，动态以及提出的建议</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">3.</span></font></span></font><strong>左</strong>
+是指产品经理，了解不清楚的业务，业务的细化以及业务变更</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">4.</span></font></span></font><strong>右</strong>
+是指测试团队，及时了解测试团队的测试结果，同时也是了解自己的工作质量；倾听测试团队提出的意见和需求；和测试团队的讨论业务需求</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">5.</span></font></span></font><strong>四面八方</strong>
+是指其与他产品团队的沟通和交流，包括架构组、运维组、其他相关业务产品的系统交互</p>
+<h3><a name="培训和技术交流提高团队整体战斗力"></a>培训和技术交流提高团队整体战斗力</h3>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">1.</span></font></span></font>系统设计培训</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">2.</span></font></span></font>代码质量培训</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">3.</span></font></span></font>期待其他技术和管理方面的培训</p>
+<h3><a name="团队成员关系融洽积极主动"></a>团队成员关系融洽积极主动</h3>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">1.</span></font></span></font>团队成员都积极主动的工作</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">2.</span></font></span></font>面对突发的、不可预知的情况——比如对工作量增加、业务需求变复杂、工作任务重新分配等——团队成员都能主动承担，有担当</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">3.</span></font></span></font>团队成员积极提出自己的意见和看法，为提高工作效率出一把力</p>
+<h2><a name="提高和改进"></a>提高和改进</h2>
+<h3><a name="所有内容都要可控"></a>所有内容都要可控</h3>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">1.</span></font></span></font>公共业务服务，像部分的如短信服务，不在可控范围内；找到相关责任人，也很难推动下去</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">2.maven</span></font></span></font>、<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">dubbo</span></font></span></font>等技术，以及中心仓库，导致出来问题后解决速度慢、找不到对应负责人</p>
+<blockquote><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">1.</span></font></span></font>任何技术实现，包括业务和技术框架，无死角控制</blockquote>
+<blockquote><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">2.</span></font></span></font>定制统一标准，并实现文档化</blockquote>
+<blockquote><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">3.</span></font></span></font>相应的工作内容落实到小组及负责人</blockquote>
+<h3><a name="标准统一一致"></a>标准统一一致</h3>
+<p>项目发展和演进过程中，系统架构、功能实现方式以及第三方框架和服务选用等方面不断改进和调整，导致的一些历史遗留问题就是公用代码实现标准不一致，比如图片上传存储和读取、地图（百度、高德）、推送（极光、百度）、数据分页接口等等不一而足。</p>
+<blockquote><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">1.</span></font></span></font>尽量统一公司的框架和技术体系</blockquote>
+<blockquote><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">2.</span></font></span></font>注意向上兼容，定好接口</blockquote>
+<blockquote><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">3.</span></font></span></font>加强控制</blockquote>
+<h3><a name="加强代码单元测试和review提高代码质量"></a>
+加强代码单元测试和<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">review</span></font></span></font>，提高代码质量</h3>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">1.</span></font></span></font>加强单元测试培训</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">2.</span></font></span></font>更积极的组织代码<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">review</span></font></span></font>，并量化和建议代码<font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">review</span></font></span></font>结果</p>
+<p><font face="Liberation Serif, serif"><span lang="en-US"><font face="Liberation Serif, serif"><span lang="en-US">3.</span></font></span></font>简历代码编写规范，培训并执行</p>
+<p>希望，本次项目经验总结和分享能给大家带来帮助，也希望能提出宝贵的意见</p>
+<p><br><br>
+</p>
+<p><br><br>
+</p>
+</body>
+</html>

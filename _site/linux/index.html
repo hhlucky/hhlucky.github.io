@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<title>Linux下查看系统信息</title>
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/css/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,400italic%7CSignika:700,300,400,600' rel='stylesheet' type='text/css'>
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+
+</head>
+
+
+<body>
+	<div id="wrap">
+	  	
+	  	<!-- Navigation -->
+	  	<nav id="nav">
+	<div id="nav-list">
+		<a href="/">Home</a>
+
+		<!-- Nav pages -->
+	  
+	    
+	      <a href="/about.html" title="About Me">About Me</a>
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+    
+    <!-- Nav links -->
+	  <a href="https://github.com/caterpillar/caterpillar.github.io/archive/master.zip">下载</a>
+<a href="https://github.com/caterpillar/caterpillar.github.io">Blog on Github</a>
+
+	</div>
+  
+  <!-- Nav footer -->
+	
+	  <footer>
+	  <h6>Welcome to Stevent's Blog</h6>
+	  <h6>QQ:917914437</h6>
+</footer>
+
+	
+
+</nav>
+
+    
+    <!-- Icon menu -->
+	  <a href="#" id="nav-menu">
+	  	<div id="menu"></div>
+	  </a>
+
+      <!-- Header -->
+      
+        <header id="header">
+
+	<a href="/">
+		<img src="/img/favicon.png" alt="Steven's Blog">
+	  <h1>Stevent's Blog</h1>
+	</a>
+</header>
+      
+
+    <!-- Main content -->
+	  <div id="container">
+		  
+		<main>
+
+			<article id="post-page">
+	<h2>Linux下查看系统信息</h2>		
+<!--	<time datetime="2015-08-14T00:00:00+08:00" class="by-line">14 Aug 2015</time> -->
+	<time datetime="2015-08-14T00:00:00+08:00" class="by-line">08-14-2015</time>
+
+	<br />
+	<div class="content">
+
+		<p>查看当前操作系统内核信息</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>uname -a
+<span class="lineno">2</span> Linux redcat 2.6.31-20-generic <span class="c">#58-Ubuntu SMP Fri Mar 12 05:23:09 UTC 2010 i686 GNU/Linux</span></code></pre></div>
+
+<p>查看当前操作系统发行版信息</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$cat</span> /etc/issue
+<span class="lineno">2</span> Ubuntu 9.10 <span class="se">\n</span> <span class="se">\l</span></code></pre></div>
+
+<p>查看cpu型号</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>cat /proc/cpuinfo <span class="p">|</span> grep name <span class="p">|</span> cut -f2 -d: <span class="p">|</span> uniq -c
+<span class="lineno">2</span> <span class="m">2</span>  Intel<span class="o">(</span>R<span class="o">)</span> Core<span class="o">(</span>TM<span class="o">)</span><span class="m">2</span> Duo CPU     P8600  @ 2.40GHz</code></pre></div>
+
+<p>(看到有2个逻辑CPU, 也知道了CPU型号)</p>
+
+<p>查看物理cpu颗数</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>cat /proc/cpuinfo <span class="p">|</span> grep physical <span class="p">|</span> uniq -c
+<span class="lineno">2</span> <span class="m">2</span> physical id    : 0</code></pre></div>
+
+<p>(说明实际上是1颗2核的CPU)</p>
+
+<p>查看cpu运行模式</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>getconf LONG_BIT
+<span class="lineno">2</span> 32</code></pre></div>
+
+<p>(说明当前CPU运行在32bit模式下, 但不代表CPU不支持64bit)</p>
+
+<p>查看cpu是否支持64bit</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>cat /proc/cpuinfo <span class="p">|</span> grep flags <span class="p">|</span> grep <span class="s1">&#39; lm &#39;</span> <span class="p">|</span> wc -l
+<span class="lineno">2</span> 2</code></pre></div>
+
+<p>(结果大于0, 说明支持64bit计算. lm指long mode, 支持lm则是64bit)</p>
+
+<p>查看cpu信息概要（昨天看aix的时候刚发现的，在ubuntu上竟然也有~）：</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno"> 1</span> <span class="nv">$lscpu</span>
+<span class="lineno"> 2</span> Architecture:          i686                            <span class="c">#架构686</span>
+<span class="lineno"> 3</span> CPU<span class="o">(</span>s<span class="o">)</span>:                <span class="m">2</span>                                   <span class="c">#逻辑cpu颗数是2</span>
+<span class="lineno"> 4</span> Thread<span class="o">(</span>s<span class="o">)</span> per core:    <span class="m">1</span>                           <span class="c">#每个核心线程数是1                 </span>
+<span class="lineno"> 5</span> Core<span class="o">(</span>s<span class="o">)</span> per socket:    <span class="m">2</span>                           <span class="c">#每个cpu插槽核数/每颗物理cpu核数是2</span>
+<span class="lineno"> 6</span> CPU socket<span class="o">(</span>s<span class="o">)</span>:         <span class="m">1</span>                            <span class="c">#cpu插槽数是1</span>
+<span class="lineno"> 7</span> Vendor ID:             GenuineIntel           <span class="c">#cpu厂商ID是GenuineIntel</span>
+<span class="lineno"> 8</span> CPU family:            <span class="m">6</span>                              <span class="c">#cpu系列是6</span>
+<span class="lineno"> 9</span> Model:                 <span class="m">23</span>                                <span class="c">#型号23</span>
+<span class="lineno">10</span> Stepping:              <span class="m">10</span>                              <span class="c">#步进是10</span>
+<span class="lineno">11</span> CPU MHz:               800.000                 <span class="c">#cpu主频是800MHz</span>
+<span class="lineno">12</span> Virtualization:        VT-x                         <span class="c">#cpu支持的虚拟化技术VT-x(对此在下一博文中解释下http://hi.baidu.com/sdusoul/blog/item/5d8e0488def3a998a5c272c0.html)</span>
+<span class="lineno">13</span> L1d cache:             32K                         <span class="c">#一级缓存32K（google了下，这具体表示表示cpu的L1数据缓存为32k）</span>
+<span class="lineno">14</span> L1i cache:             32K                          <span class="c">#一级缓存32K（具体为L1指令缓存为32K）</span>
+<span class="lineno">15</span> L2 cache:              3072K                      <span class="c">#二级缓存3072K</span></code></pre></div>
+
+<p>最后来个大而全的：</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno"> 1</span> <span class="nv">$cat</span> /proc/cpuinfo
+<span class="lineno"> 2</span> processor    : 0
+<span class="lineno"> 3</span> vendor_id    : GenuineIntel
+<span class="lineno"> 4</span> cpu family    : 6
+<span class="lineno"> 5</span> model        : 23
+<span class="lineno"> 6</span> model name    : Intel<span class="o">(</span>R<span class="o">)</span> Core<span class="o">(</span>TM<span class="o">)</span><span class="m">2</span> Duo CPU     P8600  @ 2.40GHz
+<span class="lineno"> 7</span> stepping    : 10
+<span class="lineno"> 8</span> cpu MHz        : 800.000
+<span class="lineno"> 9</span> cache size    : <span class="m">3072</span> KB
+<span class="lineno">10</span> physical id    : 0
+<span class="lineno">11</span> siblings    : 2
+<span class="lineno">12</span> core id        : 0
+<span class="lineno">13</span> cpu cores    : 2
+<span class="lineno">14</span> apicid        : 0
+<span class="lineno">15</span> initial apicid    : 0
+<span class="lineno">16</span> fdiv_bug    : no
+<span class="lineno">17</span> hlt_bug        : no
+<span class="lineno">18</span> f00f_bug    : no
+<span class="lineno">19</span> coma_bug    : no
+<span class="lineno">20</span> fpu        : yes
+<span class="lineno">21</span> fpu_exception    : yes
+<span class="lineno">22</span> cpuid level    : 13
+<span class="lineno">23</span> wp        : yes
+<span class="lineno">24</span> flags        : fpu vme de pse tsc msr pae mce cx8 apic mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts pni dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm ida tpr_shadow vnmi flexpriority
+<span class="lineno">25</span> bogomips    : 4788.60
+<span class="lineno">26</span> clflush size    : 64
+<span class="lineno">27</span> power management:
+<span class="lineno">28</span> 
+<span class="lineno">29</span> processor    : 1
+<span class="lineno">30</span> vendor_id    : GenuineIntel
+<span class="lineno">31</span> cpu family    : 6
+<span class="lineno">32</span> model        : 23
+<span class="lineno">33</span> model name    : Intel<span class="o">(</span>R<span class="o">)</span> Core<span class="o">(</span>TM<span class="o">)</span><span class="m">2</span> Duo CPU     P8600  @ 2.40GHz
+<span class="lineno">34</span> stepping    : 10
+<span class="lineno">35</span> cpu MHz        : 800.000
+<span class="lineno">36</span> cache size    : <span class="m">3072</span> KB
+<span class="lineno">37</span> physical id    : 0
+<span class="lineno">38</span> siblings    : 2
+<span class="lineno">39</span> core id        : 1
+<span class="lineno">40</span> cpu cores    : 2
+<span class="lineno">41</span> apicid        : 1
+<span class="lineno">42</span> initial apicid    : 1
+<span class="lineno">43</span> fdiv_bug    : no
+<span class="lineno">44</span> hlt_bug        : no
+<span class="lineno">45</span> f00f_bug    : no
+<span class="lineno">46</span> coma_bug    : no
+<span class="lineno">47</span> fpu        : yes
+<span class="lineno">48</span> fpu_exception    : yes
+<span class="lineno">49</span> cpuid level    : 13
+<span class="lineno">50</span> wp        : yes
+<span class="lineno">51</span> flags        : fpu vme de pse tsc msr pae mce cx8 apic mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts pni dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm ida tpr_shadow vnmi flexpriority
+<span class="lineno">52</span> bogomips    : 4787.96
+<span class="lineno">53</span> clflush size    : 64
+<span class="lineno">54</span> power management:</code></pre></div>
+
+
+		
+	</div>
+</article>
+
+
+
+	  </main>
+		
+		  <!-- Pagination links -->
+      
+
+	  </div>
+	    
+	    <!-- Footer -->
+	    <footer><span>@2015 - Steven Lee</span></footer>
+
+	    <!-- Script -->
+      <script src="/js/main.js"></script>	
+
+
+	</div>
+</body>
+</html>
