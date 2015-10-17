@@ -37,7 +37,7 @@ function backToTop() {
 
 
 }
-
+/**
 function search(){
     (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
         (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
@@ -46,8 +46,13 @@ function search(){
 
     _st('install','ncwR9a8S9CTx2q9SgsJm','2.0.0');
 }
+**/
+function search() {
+    (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+         (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+         e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+    })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
+   _st('install','W7hy2W9sVai7xdAy2zxc','2.0.0');
 
-
-
-
+}
