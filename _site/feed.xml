@@ -3,10 +3,10 @@
   <channel>
     <title>boundless</title>
     <description>Developer</description>
-    <link>http://hhlucky.githut.io/</link>
-    <atom:link href="http://hhlucky.githut.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 17 Oct 2015 21:22:54 +0800</pubDate>
-    <lastBuildDate>Sat, 17 Oct 2015 21:22:54 +0800</lastBuildDate>
+    <link>http://hhlucky.github.io/</link>
+    <atom:link href="http://hhlucky.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 17 Oct 2015 21:29:37 +0800</pubDate>
+    <lastBuildDate>Sat, 17 Oct 2015 21:29:37 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -713,8 +713,8 @@ the foo”，确实也没有什么值得写了。&lt;/p&gt;
 译者&lt;a href=&quot;http://weibo.com/hawstein&quot;&gt;@Hawstein&lt;/a&gt;。&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://hhlucky.githut.io/2015-09-30/Google-java-style/</link>
-        <guid isPermaLink="true">http://hhlucky.githut.io/2015-09-30/Google-java-style/</guid>
+        <link>http://hhlucky.github.io/2015-09-30/Google-java-style/</link>
+        <guid isPermaLink="true">http://hhlucky.github.io/2015-09-30/Google-java-style/</guid>
         
         
       </item>
@@ -835,8 +835,8 @@ the foo”，确实也没有什么值得写了。&lt;/p&gt;
 &lt;span class=&quot;lineno&quot;&gt;54&lt;/span&gt; power management:&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 14 Aug 2015 00:00:00 +0800</pubDate>
-        <link>http://hhlucky.githut.io/2015-08-14/linux/</link>
-        <guid isPermaLink="true">http://hhlucky.githut.io/2015-08-14/linux/</guid>
+        <link>http://hhlucky.github.io/2015-08-14/linux/</link>
+        <guid isPermaLink="true">http://hhlucky.github.io/2015-08-14/linux/</guid>
         
         <category>linux</category>
         
@@ -1061,8 +1061,8 @@ you&amp;#39;ve got to put paragraph tags in your blockquotes:&amp;lt;/p&amp;gt;
 &amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Wed, 12 Aug 2015 00:00:00 +0800</pubDate>
-        <link>http://hhlucky.githut.io/2015-08-12/markdown-basics/</link>
-        <guid isPermaLink="true">http://hhlucky.githut.io/2015-08-12/markdown-basics/</guid>
+        <link>http://hhlucky.github.io/2015-08-12/markdown-basics/</link>
+        <guid isPermaLink="true">http://hhlucky.github.io/2015-08-12/markdown-basics/</guid>
         
         <category>markdown</category>
         
@@ -1148,8 +1148,8 @@ PATH=&lt;q&gt;&lt;......&gt;:your path1:your path2 …&lt;/q&gt;
 然后键入/sbin/reboot重启系统（可能会提示need to boot，此时直接power off）&lt;/p&gt;
 </description>
         <pubDate>Tue, 11 Aug 2015 00:00:00 +0800</pubDate>
-        <link>http://hhlucky.githut.io/2015-08-11/linux-path-setting/</link>
-        <guid isPermaLink="true">http://hhlucky.githut.io/2015-08-11/linux-path-setting/</guid>
+        <link>http://hhlucky.github.io/2015-08-11/linux-path-setting/</link>
+        <guid isPermaLink="true">http://hhlucky.github.io/2015-08-11/linux-path-setting/</guid>
         
         <category>linux</category>
         
@@ -1172,8 +1172,8 @@ PATH=&lt;q&gt;&lt;......&gt;:your path1:your path2 …&lt;/q&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 10 Aug 2015 00:00:00 +0800</pubDate>
-        <link>http://hhlucky.githut.io/2015-08-10/spring-learning/</link>
-        <guid isPermaLink="true">http://hhlucky.githut.io/2015-08-10/spring-learning/</guid>
+        <link>http://hhlucky.github.io/2015-08-10/spring-learning/</link>
+        <guid isPermaLink="true">http://hhlucky.github.io/2015-08-10/spring-learning/</guid>
         
         <category>java</category>
         
@@ -1236,8 +1236,8 @@ PATH=&lt;q&gt;&lt;......&gt;:your path1:your path2 …&lt;/q&gt;
 &lt;p&gt;使用xelatex作为latex引擎，它可以直接使用系统已安装的字体，非常方便。&lt;/p&gt;
 </description>
         <pubDate>Mon, 10 Aug 2015 00:00:00 +0800</pubDate>
-        <link>http://hhlucky.githut.io/2015-08-10/pandoc-output-pdf/</link>
-        <guid isPermaLink="true">http://hhlucky.githut.io/2015-08-10/pandoc-output-pdf/</guid>
+        <link>http://hhlucky.github.io/2015-08-10/pandoc-output-pdf/</link>
+        <guid isPermaLink="true">http://hhlucky.github.io/2015-08-10/pandoc-output-pdf/</guid>
         
         <category>pandoc</category>
         
@@ -1366,8 +1366,8 @@ PATH=&lt;q&gt;&lt;......&gt;:your path1:your path2 …&lt;/q&gt;
 &lt;p&gt;希望，本次项目经验总结和分享能给大家带来帮助，也希望能提出宝贵的意见。&lt;/p&gt;
 </description>
         <pubDate>Sun, 09 Aug 2015 00:00:00 +0800</pubDate>
-        <link>http://hhlucky.githut.io/2015-08-09/project-manage/</link>
-        <guid isPermaLink="true">http://hhlucky.githut.io/2015-08-09/project-manage/</guid>
+        <link>http://hhlucky.github.io/2015-08-09/project-manage/</link>
+        <guid isPermaLink="true">http://hhlucky.github.io/2015-08-09/project-manage/</guid>
         
         <category>project</category>
         
@@ -1391,8 +1391,8 @@ PATH=&lt;q&gt;&lt;......&gt;:your path1:your path2 …&lt;/q&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 19 Jul 2015 00:00:00 +0800</pubDate>
-        <link>http://hhlucky.githut.io/2015-07-19/redis/</link>
-        <guid isPermaLink="true">http://hhlucky.githut.io/2015-07-19/redis/</guid>
+        <link>http://hhlucky.github.io/2015-07-19/redis/</link>
+        <guid isPermaLink="true">http://hhlucky.github.io/2015-07-19/redis/</guid>
         
         <category>redis</category>
         
@@ -1642,8 +1642,8 @@ umask还可以用于修改默认创建文件权限，命令执行如下：&lt;/p
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 27 Jun 2015 00:00:00 +0800</pubDate>
-        <link>http://hhlucky.githut.io/2015-06-27/linux-learning/</link>
-        <guid isPermaLink="true">http://hhlucky.githut.io/2015-06-27/linux-learning/</guid>
+        <link>http://hhlucky.github.io/2015-06-27/linux-learning/</link>
+        <guid isPermaLink="true">http://hhlucky.github.io/2015-06-27/linux-learning/</guid>
         
         <category>linux</category>
         
@@ -1830,8 +1830,8 @@ umask还可以用于修改默认创建文件权限，命令执行如下：&lt;/p
 &lt;/blockquote&gt;
 </description>
         <pubDate>Sat, 20 Jun 2015 00:00:00 +0800</pubDate>
-        <link>http://hhlucky.githut.io/2015-06-20/code-quality-improve/</link>
-        <guid isPermaLink="true">http://hhlucky.githut.io/2015-06-20/code-quality-improve/</guid>
+        <link>http://hhlucky.github.io/2015-06-20/code-quality-improve/</link>
+        <guid isPermaLink="true">http://hhlucky.github.io/2015-06-20/code-quality-improve/</guid>
         
         <category>code</category>
         
