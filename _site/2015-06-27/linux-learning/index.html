@@ -40,7 +40,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="http://hhlucky.github.io/">The Trees</a>
-                    <p class="navbar-text">你在暗夜里的生长延展,星星便是你结出的果子</p>
+                    <p class="navbar-text"></p>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -131,8 +131,8 @@
 
 <p>设置命令行快捷键模式</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span><span class="nb">set</span> -o vi <span class="c">#linux命令行快捷键设置为vi模式</span>
-<span class="lineno">2</span> <span class="nv">$ </span><span class="nb">set</span> -o emacs <span class="c"># inux命令行快捷键设置为emacs模式（默认模式）</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span><span class="nb">set</span> -o vi <span class="c">#linux命令行快捷键设置为vi模式</span>
+<span class="lineno">2 </span><span class="nv">$ </span><span class="nb">set</span> -o emacs <span class="c"># inux命令行快捷键设置为emacs模式（默认模式）</span></code></pre></div>
 
 <h2 id="常用命令">常用命令</h2>
 
@@ -140,8 +140,8 @@
 
 <p>ln 命令用于创建文件链接，包括软链接和硬链接</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>ln -s source_file dest_file <span class="c">#创建软链接</span>
-<span class="lineno">2</span> <span class="nv">$ </span>ln source_file dest_file <span class="c"># 创建硬链接</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span>ln -s source_file dest_file <span class="c">#创建软链接</span>
+<span class="lineno">2 </span><span class="nv">$ </span>ln source_file dest_file <span class="c"># 创建硬链接</span></code></pre></div>
 
 <p>软链接和硬链接的异同点如下：</p>
 
@@ -155,15 +155,15 @@
 
 <p>umask用于查看系统默认的创建文件的权限。umask执行的结果返回一串数字如<code class="prettyprint">0022</code>，其中第一个0是一个权限特殊位，后面的‘0222’是用户权限位，但这是一个权限掩码值。那么，什么是权限掩码值类似与子网掩码，通过这个值来计算用户权限，计算方法是777减去022（<strong>对应位减，而不是算数减</strong>）得到的值是755，那么对应的系统默认创建文件的权限就是<code class="prettyprint">rwxr-xr-r</code>。不过，通常的做法不需要这么麻烦来计算，而是用如下命令：</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span><span class="nb">umask</span> -S
-<span class="lineno">2</span> <span class="nv">u</span><span class="o">=</span>rwx,g<span class="o">=</span>rwx,o<span class="o">=</span>rx</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span><span class="nb">umask</span> -S
+<span class="lineno">2 </span><span class="nv">u</span><span class="o">=</span>rwx,g<span class="o">=</span>rwx,o<span class="o">=</span>rx</code></pre></div>
 
 <p>命令执行返回结果相当明了</p>
 
 <p><em>注意：</em> linux系统有一条权限规则，那就是缺省创建的文件不能授予x（即执行）权限，所以真正创建的文件的默认权限是<code class="prettyprint">rw-r--r--</code>
 umask还可以用于修改默认创建文件权限，命令执行如下：</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span><span class="nb">umask </span><span class="m">022</span> <span class="c">#这里的数字是用户权限位（也是一个权限掩码值）</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span><span class="nb">umask </span><span class="m">022</span> <span class="c">#这里的数字是用户权限位（也是一个权限掩码值）</span></code></pre></div>
 
 <h3 id="命令搜索命令which和whereis">命令搜索命令<code class="prettyprint">which</code>和<code class="prettyprint">whereis</code></h3>
 
@@ -173,13 +173,13 @@ umask还可以用于修改默认创建文件权限，命令执行如下：</p>
 
 <p>find查询的基本原则，要节省系统资源开销</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>find -name file_name <span class="c">#根据文件名查找文件</span>
-<span class="lineno">2</span> <span class="nv">$ </span>find -name *file_name* <span class="c">#</span>
-<span class="lineno">3</span> <span class="nv">$ </span>find -name file_name??? <span class="c">#</span>
-<span class="lineno">4</span> <span class="nv">$ </span>find -size file_size <span class="c">#根据文件大小查找文件，文件的大小的单位是block</span>
-<span class="lineno">5</span> <span class="nv">$ </span>find -user file_owner <span class="c">#根据文件所有者进行查找</span>
-<span class="lineno">6</span> <span class="nv">$ </span>find -type d <span class="c">#根据文件类型查找，f：二进制文件；d：目录；l：软链接文件</span>
-<span class="lineno">7</span> <span class="nv">$ </span>find -inum <span class="c">#根据i节点（inode）查找文件</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span>find -name file_name <span class="c">#根据文件名查找文件</span>
+<span class="lineno">2 </span><span class="nv">$ </span>find -name *file_name* <span class="c">#</span>
+<span class="lineno">3 </span><span class="nv">$ </span>find -name file_name??? <span class="c">#</span>
+<span class="lineno">4 </span><span class="nv">$ </span>find -size file_size <span class="c">#根据文件大小查找文件，文件的大小的单位是block</span>
+<span class="lineno">5 </span><span class="nv">$ </span>find -user file_owner <span class="c">#根据文件所有者进行查找</span>
+<span class="lineno">6 </span><span class="nv">$ </span>find -type d <span class="c">#根据文件类型查找，f：二进制文件；d：目录；l：软链接文件</span>
+<span class="lineno">7 </span><span class="nv">$ </span>find -inum <span class="c">#根据i节点（inode）查找文件</span></code></pre></div>
 
 <blockquote>
 <p>一般1block=512B；+ 表示大于指定大小，- 表示小于指定大小 </p>
@@ -196,7 +196,7 @@ umask还可以用于修改默认创建文件权限，命令执行如下：</p>
 <li><code class="prettyprint">-</code>表示多长时间之内，<code class="prettyprint">+</code>超过多长时间</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>find /etc -mmin -120 <span class="c">#在/etc目录下查找120分钟内被内容修改过的文件</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span>find /etc -mmin -120 <span class="c">#在/etc目录下查找120分钟内被内容修改过的文件</span></code></pre></div>
 
 <p>find命令可以用连接符实现多个条件组合查找文件</p>
 
@@ -206,7 +206,7 @@ umask还可以用于修改默认创建文件权限，命令执行如下：</p>
 <li><code class="prettyprint">-ok</code> <code class="prettyprint">-ok</code>与<code class="prettyprint">-exec</code>的唯一区别是前者会询问确认</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>find -name text.txt -exec ls -l <span class="o">{}</span> <span class="se">\;</span>  <span class="c">#查找文件名为text.txt的文件，并列出其详细信息</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span>find -name text.txt -exec ls -l <span class="o">{}</span> <span class="se">\;</span>  <span class="c">#查找文件名为text.txt的文件，并列出其详细信息</span></code></pre></div>
 
 <h3 id="文件搜索命令locate">文件搜索命令<code class="prettyprint">locate</code></h3>
 
@@ -236,8 +236,8 @@ umask还可以用于修改默认创建文件权限，命令执行如下：</p>
 
 <p><q>.tar.gz</q>为后缀的文件是用tar打包并用gzip压缩后的文件。代码示例</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>tar -zcvf file_name.tar.gz dir_name <span class="c"># 将dir_name目录的文件打包压缩为file_name.tar.gz</span>
-<span class="lineno">2</span> <span class="nv">$ </span>tar -zxvf file_name.tar.gz  <span class="c"># 解压缩文件file_name.tar.gz</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span>tar -zcvf file_name.tar.gz dir_name <span class="c"># 将dir_name目录的文件打包压缩为file_name.tar.gz</span>
+<span class="lineno">2 </span><span class="nv">$ </span>tar -zxvf file_name.tar.gz  <span class="c"># 解压缩文件file_name.tar.gz</span></code></pre></div>
 
 <p><code class="prettyprint">file</code> 命令用于判断文件的类型，比如用于判断其是否是压缩打包的文件</p>
 
@@ -252,10 +252,10 @@ umask还可以用于修改默认创建文件权限，命令执行如下：</p>
 
 <h3 id="网络命令ping">网络命令<code class="prettyprint">ping</code></h3>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>ping -c <span class="o">[</span>ping次数<span class="o">]</span> <span class="o">[</span>ip地址<span class="o">]</span>
-<span class="lineno">2</span> <span class="nv">$ </span>ping -s <span class="o">[</span>数据包大小<span class="o">]</span> <span class="o">[</span>ip地址<span class="o">]</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span>ping -c <span class="o">[</span>ping次数<span class="o">]</span> <span class="o">[</span>ip地址<span class="o">]</span>
+<span class="lineno">2 </span><span class="nv">$ </span>ping -s <span class="o">[</span>数据包大小<span class="o">]</span> <span class="o">[</span>ip地址<span class="o">]</span></code></pre></div>
 
-<h2 id="vi-vim使用">vi/vim使用</h2>
+<h2 id="vi/vim使用">vi/vim使用</h2>
 
 <h3 id="vi的模式说明">vi的模式说明</h3>
 
@@ -291,9 +291,9 @@ umask还可以用于修改默认创建文件权限，命令执行如下：</p>
 <li>:%s/[old]/[new]/g       用字符串new替换old，/g表示全局替换，不会询问；而/c表示询问是否执行替换</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> :n1,n2s/^/#/g  <span class="c">#从行n1到行n1添加注释符#</span>
-<span class="lineno">2</span> :n1,n2s/^#//g  <span class="c">#删除从行n1到行n1的注释符#</span>
-<span class="lineno">3</span> :n1,n2s/^<span class="se">\/\/</span>/g  <span class="c">#删除从行n1到行n1的注释符\\</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span>:n1,n2s/^/#/g  <span class="c">#从行n1到行n1添加注释符#</span>
+<span class="lineno">2 </span>:n1,n2s/^#//g  <span class="c">#删除从行n1到行n1的注释符#</span>
+<span class="lineno">3 </span>:n1,n2s/^<span class="se">\/\/</span>/g  <span class="c">#删除从行n1到行n1的注释符\\</span></code></pre></div>
 
 <p>删除文本命令（命令模式）：</p>
 
@@ -1230,16 +1230,6 @@ umask还可以用于修改默认创建文件权限，命令执行如下：</p>
                         
                     
 
-                    
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-08-14/linux/">Linux下查看系统信息</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-08-11/linux-path-setting/">Linux PAHT Setting</a>
-                            </li>
-                        
                     
                 </ul>
             </div>

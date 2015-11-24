@@ -40,7 +40,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="http://hhlucky.github.io/">The Trees</a>
-                    <p class="navbar-text">你在暗夜里的生长延展,星星便是你结出的果子</p>
+                    <p class="navbar-text"></p>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -123,7 +123,7 @@
     <span class="kd">private</span> <span class="n">ServerSocket</span> <span class="n">serverSocket</span><span class="o">;</span>
 
     <span class="kd">public</span> <span class="nf">HttpPrint</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="n">serverSocket</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ServerSocket</span><span class="o">(</span><span class="mi">8080</span><span class="o">);</span>
+        <span class="n">serverSocket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ServerSocket</span><span class="o">(</span><span class="mi">8080</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">show</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">{</span>
@@ -131,7 +131,7 @@
             <span class="n">Socket</span> <span class="n">socket</span> <span class="o">=</span> <span class="n">serverSocket</span><span class="o">.</span><span class="na">accept</span><span class="o">();</span>
             <span class="kt">byte</span><span class="o">[]</span> <span class="n">buf</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
             <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span>  <span class="n">socket</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">();</span>
-            <span class="n">ByteArrayOutputStream</span> <span class="n">os</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ByteArrayOutputStream</span><span class="o">();</span>
+            <span class="n">ByteArrayOutputStream</span> <span class="n">os</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayOutputStream</span><span class="o">();</span>
             <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
             <span class="k">while</span> <span class="o">((</span><span class="n">n</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buf</span><span class="o">))</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="o">){</span>
                 <span class="n">os</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="n">n</span><span class="o">);</span>
@@ -144,7 +144,7 @@
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="k">new</span> <span class="nf">HttpPrint</span><span class="o">().</span><span class="na">show</span><span class="o">();</span>
+        <span class="k">new</span> <span class="n">HttpPrint</span><span class="o">().</span><span class="na">show</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -211,7 +211,7 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
         <span class="c1">//System.out.println(req.getParameter(&quot;param&quot;));</span>
         <span class="kt">byte</span><span class="o">[]</span> <span class="n">buf</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
         <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="n">ByteArrayOutputStream</span> <span class="n">bos</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ByteArrayOutputStream</span><span class="o">();</span>
+        <span class="n">ByteArrayOutputStream</span> <span class="n">bos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayOutputStream</span><span class="o">();</span>
         <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">();</span>
         <span class="k">while</span> <span class="o">((</span><span class="n">n</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">buf</span><span class="o">.</span><span class="na">length</span><span class="o">))&gt;-</span><span class="mi">1</span><span class="o">){</span>
             <span class="n">bos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">n</span><span class="o">);</span>
@@ -1217,68 +1217,6 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
                         
                     
 
-                    
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-04-09/rmi/">RMI</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-12/spring-security/">spring security 探秘</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-05/validator/">Bean Validation</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-02-22/javajs/">Java中用js解析json</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-02-13/sqlappend/">SQL 拼接</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-12-21/webservice/">WebService</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-12-13/java-newfeature/">Java8 新特性</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-11-18/java-concurrent/">Java Concurrent</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-08-20/jvm/">Java虚拟机</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-06-26/effective/">Effective Java</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-05-12/acturl-generic/">超类中的泛型</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-04-15/fileupload/">Custom Fileupload</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-03-22/reentrantlock/">可重入锁</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-03-16/tomcat-https/">Tomcat Https 配置</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-03-13/resubmit/">防止重复提交的几种办法</a>
-                            </li>
-                        
                     
                 </ul>
             </div>

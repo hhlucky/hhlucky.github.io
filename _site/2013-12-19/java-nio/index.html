@@ -40,7 +40,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="http://hhlucky.github.io/">The Trees</a>
-                    <p class="navbar-text">你在暗夜里的生长延展,星星便是你结出的果子</p>
+                    <p class="navbar-text"></p>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -185,7 +185,7 @@
 <li>SocketChannel 能通过TCP读写网络中的数据。</li>
 <li>ServerSocketChannel 可以监听新进来的TCP连接，像Web服务器那样。对每一个新进来的连接都会创建一个SocketChannel。</li>
 </ul>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">RandomAccessFile</span> <span class="n">aFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;data/nio-data.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">RandomAccessFile</span> <span class="n">aFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;data/nio-data.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
 <span class="n">FileChannel</span> <span class="n">inChannel</span> <span class="o">=</span> <span class="n">aFile</span><span class="o">.</span><span class="na">getChannel</span><span class="o">();</span>
 
 <span class="n">ByteBuffer</span> <span class="n">buf</span> <span class="o">=</span> <span class="n">ByteBuffer</span><span class="o">.</span><span class="na">allocate</span><span class="o">(</span><span class="mi">48</span><span class="o">);</span>
@@ -231,7 +231,7 @@
 <p>clear()方法会清空整个缓冲区。</p>
 
 <p>compact()方法只会清除已经读过的数据。任何未读的数据都被移到缓冲区的起始处，新写入的数据将放到缓冲区未读数据的后面。</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">RandomAccessFile</span> <span class="n">aFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;data/nio-data.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">RandomAccessFile</span> <span class="n">aFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;data/nio-data.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
 <span class="n">FileChannel</span> <span class="n">inChannel</span> <span class="o">=</span> <span class="n">aFile</span><span class="o">.</span><span class="na">getChannel</span><span class="o">();</span>
 
 <span class="c1">//create buffer with capacity of 48 bytes</span>
@@ -251,7 +251,7 @@
 <span class="o">}</span>
 <span class="n">aFile</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 </code></pre></div>
-<h2 id="buffer的capacity-position和limit">Buffer的capacity,position和limit</h2>
+<h2 id="buffer的capacity,position和limit">Buffer的capacity,position和limit</h2>
 
 <p>缓冲区本质上是一块可以写入数据，然后可以从中读取数据的内存。这块内存被包装成NIO Buffer对象，并提供了一组方法，用来方便的访问该块内存。</p>
 
@@ -327,7 +327,7 @@
 </code></pre></div>
 <p>put方法有很多版本，允许你以不同的方式把数据写入到Buffer中。例如， 写到一个指定的位置，或者把一个字节数组写入到Buffer。 更多Buffer实现的细节参考JavaDoc。</p>
 
-<h2 id="flip-方法">flip()方法</h2>
+<h2 id="flip()方法">flip()方法</h2>
 
 <p>flip方法将Buffer从写模式切换到读模式。调用flip()方法会将position设回0，并将limit设置成之前position的值。</p>
 
@@ -350,11 +350,11 @@
 </code></pre></div>
 <p>get方法有很多版本，允许你以不同的方式从Buffer中读取数据。例如，从指定position读取，或者从Buffer中读取数据到字节数组。更多Buffer实现的细节参考JavaDoc。</p>
 
-<h2 id="rewind-方法">rewind()方法</h2>
+<h2 id="rewind()方法">rewind()方法</h2>
 
 <p>Buffer.rewind()将position设回0，所以你可以重读Buffer中的所有数据。limit保持不变，仍然表示能从Buffer中读取多少个元素（byte、char等）。</p>
 
-<h2 id="clear-与compact-方法">clear()与compact()方法</h2>
+<h2 id="clear()与compact()方法">clear()与compact()方法</h2>
 
 <p>一旦读完Buffer中的数据，需要让Buffer准备好再次被写入。可以通过clear()或compact()方法来完成。</p>
 
@@ -366,14 +366,14 @@
 
 <p>compact()方法将所有未读的数据拷贝到Buffer起始处。然后将position设到最后一个未读元素正后面。limit属性依然像clear()方法一样，设置成capacity。现在Buffer准备好写数据了，但是不会覆盖未读的数据。</p>
 
-<h2 id="mark-与reset-方法">mark()与reset()方法</h2>
+<h2 id="mark()与reset()方法">mark()与reset()方法</h2>
 
 <p>通过调用Buffer.mark()方法，可以标记Buffer中的一个特定position。之后可以通过调用Buffer.reset()方法恢复到这个position。例如：</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">buffer</span><span class="o">.</span><span class="na">mark</span><span class="o">();</span>
 <span class="c1">//call buffer.get() a couple of times, e.g. during parsing.</span>
 <span class="n">buffer</span><span class="o">.</span><span class="na">reset</span><span class="o">();</span>  <span class="c1">//set position back to mark.</span>
 </code></pre></div>
-<h2 id="equals-与compareto-方法">equals()与compareTo()方法</h2>
+<h2 id="equals()与compareto()方法">equals()与compareTo()方法</h2>
 
 <p>可以使用equals()和compareTo()方法比较两个Buffer。</p>
 
@@ -400,7 +400,7 @@
 
 <p>（注：剩余元素是从 position到limit之间的元素）</p>
 
-<h1 id="scatter-gather">Scatter/Gather</h1>
+<h1 id="scatter/gather">Scatter/Gather</h1>
 
 <p>Java NIO开始支持scatter/gather，scatter/gather用于描述从Channel中读取或者写入到Channel的操作。</p>
 
@@ -445,13 +445,13 @@
 
 <p>在Java NIO中，如果两个通道中有一个是FileChannel，那你可以直接将数据从一个channel传输到另外一个channel。</p>
 
-<h2 id="transferfrom">transferFrom()</h2>
+<h2 id="transferfrom()">transferFrom()</h2>
 
 <p>FileChannel的transferFrom()方法可以将数据从源通道传输到FileChannel中（译者注：这个方法在JDK文档中的解释为将字节从给定的可读取字节通道传输到此通道的文件中）。下面是一个简单的例子：</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">RandomAccessFile</span> <span class="n">fromFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;fromFile.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">RandomAccessFile</span> <span class="n">fromFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;fromFile.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
 <span class="n">FileChannel</span>      <span class="n">fromChannel</span> <span class="o">=</span> <span class="n">fromFile</span><span class="o">.</span><span class="na">getChannel</span><span class="o">();</span>
 
-<span class="n">RandomAccessFile</span> <span class="n">toFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;toFile.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
+<span class="n">RandomAccessFile</span> <span class="n">toFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;toFile.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
 <span class="n">FileChannel</span>      <span class="n">toChannel</span> <span class="o">=</span> <span class="n">toFile</span><span class="o">.</span><span class="na">getChannel</span><span class="o">();</span>
 
 <span class="kt">long</span> <span class="n">position</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
@@ -462,13 +462,13 @@
 <p>方法的输入参数position表示从position处开始向目标文件写入数据，count表示最多传输的字节数。如果源通道的剩余空间小于 count 个字节，则所传输的字节数要小于请求的字节数。
 此外要注意，在SoketChannel的实现中，SocketChannel只会传输此刻准备好的数据（可能不足count字节）。因此，SocketChannel可能不会将请求的所有数据(count个字节)全部传输到FileChannel中。</p>
 
-<h2 id="transferto">transferTo()</h2>
+<h2 id="transferto()">transferTo()</h2>
 
 <p>transferTo()方法将数据从FileChannel传输到其他的channel中。下面是一个简单的例子：</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">RandomAccessFile</span> <span class="n">fromFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;fromFile.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">RandomAccessFile</span> <span class="n">fromFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;fromFile.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
 <span class="n">FileChannel</span>      <span class="n">fromChannel</span> <span class="o">=</span> <span class="n">fromFile</span><span class="o">.</span><span class="na">getChannel</span><span class="o">();</span>
 
-<span class="n">RandomAccessFile</span> <span class="n">toFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;toFile.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
+<span class="n">RandomAccessFile</span> <span class="n">toFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;toFile.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
 <span class="n">FileChannel</span>      <span class="n">toChannel</span> <span class="o">=</span> <span class="n">toFile</span><span class="o">.</span><span class="na">getChannel</span><span class="o">();</span>
 
 <span class="kt">long</span> <span class="n">position</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
@@ -556,7 +556,7 @@
 <span class="n">selectionKey</span><span class="o">.</span><span class="na">isReadable</span><span class="o">();</span>
 <span class="n">selectionKey</span><span class="o">.</span><span class="na">isWritable</span><span class="o">();</span>
 </code></pre></div>
-<h3 id="channel-selector">Channel + Selector</h3>
+<h3 id="channel-+-selector">Channel + Selector</h3>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Channel</span>  <span class="n">channel</span>  <span class="o">=</span> <span class="n">selectionKey</span><span class="o">.</span><span class="na">channel</span><span class="o">();</span>
 <span class="n">Selector</span> <span class="n">selector</span> <span class="o">=</span> <span class="n">selectionKey</span><span class="o">.</span><span class="na">selector</span><span class="o">();</span>
 </code></pre></div>
@@ -589,7 +589,7 @@
 
 <p>select()方法返回的int值表示自上次调用select()方法后有多少通道已经就绪（不累加）如果调用select()方法，因为有一个通道变成就绪状态，返回了1，若再次调用select()方法，如果另一个通道就绪了，它会再次返回1。如果对第一个就绪的channel没有做任何操作，现在就有两个就绪的通道，但在每次select()方法调用之间，只有一个通道就绪了。</p>
 
-<h3 id="selectedkeys">selectedKeys()</h3>
+<h3 id="selectedkeys()">selectedKeys()</h3>
 
 <p>一旦调用了select()方法，并且返回值表明有一个或更多个通道就绪了，然后可以通过调用selector的selectedKeys()方法，访问“已选择键集（selected key set）”中的就绪通道。如下所示：</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Set</span> <span class="n">selectedKeys</span> <span class="o">=</span> <span class="n">selector</span><span class="o">.</span><span class="na">selectedKeys</span><span class="o">();</span>
@@ -603,11 +603,11 @@
     <span class="n">SelectionKey</span> <span class="n">key</span> <span class="o">=</span> <span class="n">keyIterator</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
     <span class="k">if</span><span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isAcceptable</span><span class="o">())</span> <span class="o">{</span>
         <span class="c1">// a connection was accepted by a ServerSocketChannel.</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isConnectable</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isConnectable</span><span class="o">())</span> <span class="o">{</span>
         <span class="c1">// a connection was established with a remote server.</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isReadable</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isReadable</span><span class="o">())</span> <span class="o">{</span>
         <span class="c1">// a channel is ready for reading</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isWritable</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isWritable</span><span class="o">())</span> <span class="o">{</span>
         <span class="c1">// a channel is ready for writing</span>
     <span class="o">}</span>
     <span class="n">keyIterator</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
@@ -619,13 +619,13 @@
 
 <p>SelectionKey.channel()方法返回的通道需要转型成你要处理的类型，如ServerSocketChannel或SocketChannel等。</p>
 
-<h2 id="wakeup">wakeUp()</h2>
+<h2 id="wakeup()">wakeUp()</h2>
 
 <p>某个线程调用select()方法后阻塞了，即使没有通道已经就绪，也有办法让其从select()方法返回。只要让其它线程在第一个线程调用select()方法的那个对象上调用Selector.wakeup()方法即可。阻塞在select()方法上的线程会立马返回。</p>
 
 <p>如果有其它线程调用了wakeup()方法，但当前没有线程阻塞在select()方法上，下个调用select()方法的线程会立即“醒来（wake up）”。</p>
 
-<h2 id="close">close()</h2>
+<h2 id="close()">close()</h2>
 
 <p>用完Selector后调用其close()方法会关闭该Selector，且使注册到该Selector上的所有SelectionKey实例无效。通道本身并不会关闭。</p>
 
@@ -644,11 +644,11 @@
     <span class="n">SelectionKey</span> <span class="n">key</span> <span class="o">=</span> <span class="n">keyIterator</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
     <span class="k">if</span><span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isAcceptable</span><span class="o">())</span> <span class="o">{</span>
         <span class="c1">// a connection was accepted by a ServerSocketChannel.</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isConnectable</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isConnectable</span><span class="o">())</span> <span class="o">{</span>
         <span class="c1">// a connection was established with a remote server.</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isReadable</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isReadable</span><span class="o">())</span> <span class="o">{</span>
         <span class="c1">// a channel is ready for reading</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isWritable</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">isWritable</span><span class="o">())</span> <span class="o">{</span>
         <span class="c1">// a channel is ready for writing</span>
     <span class="o">}</span>
     <span class="n">keyIterator</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
@@ -664,7 +664,7 @@
 <h2 id="打开filechannel">打开FileChannel</h2>
 
 <p>在使用FileChannel之前，必须先打开它。但是，我们无法直接打开一个FileChannel，需要通过使用一个InputStream、OutputStream或RandomAccessFile来获取一个FileChannel实例。下面是通过RandomAccessFile打开FileChannel的示例：</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">RandomAccessFile</span> <span class="n">aFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;data/nio-data.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">RandomAccessFile</span> <span class="n">aFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RandomAccessFile</span><span class="o">(</span><span class="s">&quot;data/nio-data.txt&quot;</span><span class="o">,</span> <span class="s">&quot;rw&quot;</span><span class="o">);</span>
 <span class="n">FileChannel</span> <span class="n">inChannel</span> <span class="o">=</span> <span class="n">aFile</span><span class="o">.</span><span class="na">getChannel</span><span class="o">();</span>
 </code></pre></div>
 <h2 id="从filechannel读取数据">从FileChannel读取数据</h2>
@@ -737,7 +737,7 @@
 
 <h2 id="打开-socketchannel">打开 SocketChannel</h2>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">SocketChannel</span> <span class="n">socketChannel</span> <span class="o">=</span> <span class="n">SocketChannel</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>
-<span class="n">socketChannel</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="k">new</span> <span class="nf">InetSocketAddress</span><span class="o">(</span><span class="s">&quot;http://jenkov.com&quot;</span><span class="o">,</span> <span class="mi">80</span><span class="o">));</span>
+<span class="n">socketChannel</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="s">&quot;http://jenkov.com&quot;</span><span class="o">,</span> <span class="mi">80</span><span class="o">));</span>
 </code></pre></div>
 <h2 id="关闭-socketchannel">关闭 SocketChannel</h2>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">socketChannel</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
@@ -765,21 +765,21 @@
 
 <p>可以设置 SocketChannel 为非阻塞模式（non-blocking mode）.设置之后，就可以在异步模式下调用connect(), read() 和write()了。</p>
 
-<h3 id="connect">connect()</h3>
+<h3 id="connect()">connect()</h3>
 
 <p>如果SocketChannel在非阻塞模式下，此时调用connect()，该方法可能在连接建立之前就返回了。为了确定连接是否建立，可以调用finishConnect()的方法。像这样：</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">socketChannel</span><span class="o">.</span><span class="na">configureBlocking</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
-<span class="n">socketChannel</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="k">new</span> <span class="nf">InetSocketAddress</span><span class="o">(</span><span class="s">&quot;http://jenkov.com&quot;</span><span class="o">,</span> <span class="mi">80</span><span class="o">));</span>
+<span class="n">socketChannel</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="s">&quot;http://jenkov.com&quot;</span><span class="o">,</span> <span class="mi">80</span><span class="o">));</span>
 
 <span class="k">while</span><span class="o">(!</span> <span class="n">socketChannel</span><span class="o">.</span><span class="na">finishConnect</span><span class="o">()</span> <span class="o">){</span>
     <span class="c1">//wait, or do something else...</span>
 <span class="o">}</span>
 </code></pre></div>
-<h3 id="write">write()</h3>
+<h3 id="write()">write()</h3>
 
 <p>非阻塞模式下，write()方法在尚未写出任何内容时可能就返回了。所以需要在循环中调用write()。前面已经有例子了，这里就不赘述了。</p>
 
-<h3 id="read">read()</h3>
+<h3 id="read()">read()</h3>
 
 <p>非阻塞模式下,read()方法在尚未读取到任何数据时可能就返回了。所以需要关注它的int返回值，它会告诉你读取了多少字节。</p>
 
@@ -792,7 +792,7 @@
 <p>Java NIO中的 ServerSocketChannel 是一个可以监听新进来的TCP连接的通道, 就像标准IO中的ServerSocket一样。ServerSocketChannel类在 java.nio.channels包中。</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">ServerSocketChannel</span> <span class="n">serverSocketChannel</span> <span class="o">=</span> <span class="n">ServerSocketChannel</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>
 
-<span class="n">serverSocketChannel</span><span class="o">.</span><span class="na">socket</span><span class="o">().</span><span class="na">bind</span><span class="o">(</span><span class="k">new</span> <span class="nf">InetSocketAddress</span><span class="o">(</span><span class="mi">9999</span><span class="o">));</span>
+<span class="n">serverSocketChannel</span><span class="o">.</span><span class="na">socket</span><span class="o">().</span><span class="na">bind</span><span class="o">(</span><span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="mi">9999</span><span class="o">));</span>
 
 <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
     <span class="n">SocketChannel</span> <span class="n">socketChannel</span> <span class="o">=</span>
@@ -810,7 +810,7 @@
 <p>ServerSocketChannel可以设置成非阻塞模式。在非阻塞模式下，accept() 方法会立刻返回，如果还没有新进来的连接,返回的将是null。 因此，需要检查返回的SocketChannel是否是null.如：</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">ServerSocketChannel</span> <span class="n">serverSocketChannel</span> <span class="o">=</span> <span class="n">ServerSocketChannel</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>
 
-<span class="n">serverSocketChannel</span><span class="o">.</span><span class="na">socket</span><span class="o">().</span><span class="na">bind</span><span class="o">(</span><span class="k">new</span> <span class="nf">InetSocketAddress</span><span class="o">(</span><span class="mi">9999</span><span class="o">));</span>
+<span class="n">serverSocketChannel</span><span class="o">.</span><span class="na">socket</span><span class="o">().</span><span class="na">bind</span><span class="o">(</span><span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="mi">9999</span><span class="o">));</span>
 <span class="n">serverSocketChannel</span><span class="o">.</span><span class="na">configureBlocking</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
 
 <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
@@ -828,7 +828,7 @@
 
 <h2 id="打开-datagramchannel">打开 DatagramChannel</h2>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">DatagramChannel</span> <span class="n">channel</span> <span class="o">=</span> <span class="n">DatagramChannel</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>
-<span class="n">channel</span><span class="o">.</span><span class="na">socket</span><span class="o">().</span><span class="na">bind</span><span class="o">(</span><span class="k">new</span> <span class="nf">InetSocketAddress</span><span class="o">(</span><span class="mi">9999</span><span class="o">));</span>
+<span class="n">channel</span><span class="o">.</span><span class="na">socket</span><span class="o">().</span><span class="na">bind</span><span class="o">(</span><span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="mi">9999</span><span class="o">));</span>
 </code></pre></div>
 <h2 id="接收数据">接收数据</h2>
 
@@ -847,14 +847,14 @@
 <span class="n">buf</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">newData</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
 <span class="n">buf</span><span class="o">.</span><span class="na">flip</span><span class="o">();</span>
 
-<span class="kt">int</span> <span class="n">bytesSent</span> <span class="o">=</span> <span class="n">channel</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span> <span class="k">new</span> <span class="nf">InetSocketAddress</span><span class="o">(</span><span class="s">&quot;jenkov.com&quot;</span><span class="o">,</span> <span class="mi">80</span><span class="o">));</span>
+<span class="kt">int</span> <span class="n">bytesSent</span> <span class="o">=</span> <span class="n">channel</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span> <span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="s">&quot;jenkov.com&quot;</span><span class="o">,</span> <span class="mi">80</span><span class="o">));</span>
 </code></pre></div>
 <p>这个例子发送一串字符到”jenkov.com”服务器的UDP端口80。 因为服务端并没有监控这个端口，所以什么也不会发生。也不会通知你发出的数据包是否已收到，因为UDP在数据传送方面没有任何保证。</p>
 
 <h2 id="连接到特定的地址">连接到特定的地址</h2>
 
 <p>可以将DatagramChannel“连接”到网络中的特定地址的。由于UDP是无连接的，连接到特定地址并不会像TCP通道那样创建一个真正的连接。而是锁住DatagramChannel ，让其只能从特定地址收发数据。</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">channel</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="k">new</span> <span class="nf">InetSocketAddress</span><span class="o">(</span><span class="s">&quot;jenkov.com&quot;</span><span class="o">,</span> <span class="mi">80</span><span class="o">));</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">channel</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="k">new</span> <span class="n">InetSocketAddress</span><span class="o">(</span><span class="s">&quot;jenkov.com&quot;</span><span class="o">,</span> <span class="mi">80</span><span class="o">));</span>
 </code></pre></div>
 <p>当连接后，也可以使用read()和write()方法，就像在用传统的通道一样。只是在数据传送方面没有任何保证。</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">bytesRead</span> <span class="o">=</span> <span class="n">channel</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buf</span><span class="o">);</span>
@@ -961,7 +961,7 @@ Phone: 1234567890
 </code></pre></div>
 <p>该文本行的流可以这样处理：</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">InputStream</span> <span class="n">input</span> <span class="o">=</span> <span class="err">…</span> <span class="o">;</span> <span class="c1">// get the InputStream from the client socket</span>
-<span class="n">BufferedReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">input</span><span class="o">));</span>
+<span class="n">BufferedReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">input</span><span class="o">));</span>
 <span class="n">String</span> <span class="n">nameLine</span>   <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
 <span class="n">String</span> <span class="n">ageLine</span>    <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
 <span class="n">String</span> <span class="n">emailLine</span>  <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
@@ -1957,68 +1957,6 @@ Phone: 1234567890
                         
                     
 
-                    
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-04-09/rmi/">RMI</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-17/servlet-encode/">Servlet乱码分析</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-12/spring-security/">spring security 探秘</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-05/validator/">Bean Validation</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-02-22/javajs/">Java中用js解析json</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-02-13/sqlappend/">SQL 拼接</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-12-21/webservice/">WebService</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-12-13/java-newfeature/">Java8 新特性</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-11-18/java-concurrent/">Java Concurrent</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-08-20/jvm/">Java虚拟机</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-06-26/effective/">Effective Java</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-05-12/acturl-generic/">超类中的泛型</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-04-15/fileupload/">Custom Fileupload</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-03-22/reentrantlock/">可重入锁</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-03-16/tomcat-https/">Tomcat Https 配置</a>
-                            </li>
-                        
                     
                 </ul>
             </div>

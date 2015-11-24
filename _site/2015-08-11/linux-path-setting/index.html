@@ -40,7 +40,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="http://hhlucky.github.io/">The Trees</a>
-                    <p class="navbar-text">你在暗夜里的生长延展,星星便是你结出的果子</p>
+                    <p class="navbar-text"></p>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -128,15 +128,15 @@
 
 <h3 id="pash环境变量的设置方法：">PASH环境变量的设置方法：</h3>
 
-<h4 id="方法一：用户主目录下的-profile或-bashrc文件（推荐）">方法一：用户主目录下的.profile或.bashrc文件（推荐）</h4>
+<h4 id="方法一：用户主目录下的.profile或.bashrc文件（推荐）">方法一：用户主目录下的.profile或.bashrc文件（推荐）</h4>
 
 <p>登录到你的用户（非root），在终端输入： </p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>sudo gedit ~/.profile<span class="o">(</span>or .bashrc<span class="o">)</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span>sudo gedit ~/.profile<span class="o">(</span>or .bashrc<span class="o">)</span></code></pre></div>
 
 <p>可以在此文件末尾加入PATH的设置如下： </p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>”<span class="nv">$PATH</span>:your path1:your path2 ...”</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>”<span class="nv">$PATH</span>:your path1:your path2 ...”</code></pre></div>
 
 <p>保存文件，注销再登录，变量生效。 
 该方式添加的变量只对当前用户有效。 </p>
@@ -145,11 +145,11 @@
 
 <p>在系统的etc目录下，有一个profile文件，编辑该文件： </p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>sudo gedit /etc/profile</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span>sudo gedit /etc/profile</code></pre></div>
 
 <p>在最后加入PATH的设置如下： </p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>”<span class="nv">$PATH</span>:your path1:your path2 ...”</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>”<span class="nv">$PATH</span>:your path1:your path2 ...”</code></pre></div>
 
 <p>该文件编辑保存后，重启系统，变量生效。 
 该方式添加的变量对所有的用户都有效。 </p>
@@ -158,7 +158,7 @@
 
 <p>在系统的etc目录下，有一个environment文件，编辑该文件： </p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>sudo gedit /etc/environment</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span>sudo gedit /etc/environment</code></pre></div>
 
 <p>找到以下的 PATH 变量： 
 PATH=<q><......></q> 
@@ -169,7 +169,7 @@ PATH=<q><......>:your path1:your path2 …</q>
 
 <h4 id="方法四：直接在终端下输入">方法四：直接在终端下输入</h4>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nv">$ </span>sudo <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;$PATH:your path1:your path2 …&quot;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nv">$ </span>sudo <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:your path1:your path2 …&quot;</span></code></pre></div>
 
 <p>这种方式变量立即生效，但用户注销或系统重启后设置变成无效，适合临时变量的设置。 </p>
 
@@ -1076,16 +1076,6 @@ PATH=<q><......>:your path1:your path2 …</q>
                         
                     
 
-                    
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-08-14/linux/">Linux下查看系统信息</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-06-27/linux-learning/">Linux Learning</a>
-                            </li>
-                        
                     
                 </ul>
             </div>

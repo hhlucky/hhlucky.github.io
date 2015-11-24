@@ -40,7 +40,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="http://hhlucky.github.io/">The Trees</a>
-                    <p class="navbar-text">你在暗夜里的生长延展,星星便是你结出的果子</p>
+                    <p class="navbar-text"></p>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -114,7 +114,7 @@
 
 <h1 id="一-创建和销毁对象"><code class="prettyprint">一</code> 创建和销毁对象</h1>
 
-<h2 id="1-考虑用静态工厂方法代替构造器"><code class="prettyprint">1</code>.考虑用静态工厂方法代替构造器</h2>
+<h2 id="1.考虑用静态工厂方法代替构造器"><code class="prettyprint">1</code>.考虑用静态工厂方法代替构造器</h2>
 
 <p>静态工厂方法的优势：</p>
 
@@ -128,7 +128,7 @@
 
 <p><code class="prettyprint">5</code>.不可变对象可以进行缓存，以提升性能</p>
 
-<h2 id="2-遇到多个构造器参数时要考虑用构建器"><code class="prettyprint">2</code>.遇到多个构造器参数时要考虑用构建器</h2>
+<h2 id="2.遇到多个构造器参数时要考虑用构建器"><code class="prettyprint">2</code>.遇到多个构造器参数时要考虑用构建器</h2>
 
 <p>构建器优势：</p>
 
@@ -142,7 +142,7 @@
 
 <p>不足：创建对象前需要先创建builder</p>
 
-<h2 id="3-用私有构造器或者枚举类型强化singleton属性"><code class="prettyprint">3</code>.用私有构造器或者枚举类型强化Singleton属性</h2>
+<h2 id="3.用私有构造器或者枚举类型强化singleton属性"><code class="prettyprint">3</code>.用私有构造器或者枚举类型强化Singleton属性</h2>
 
 <p>不使用枚举时：</p>
 
@@ -152,11 +152,11 @@
 
 <p><code class="prettyprint">3</code>.序列化时必须声明所有实例域都是瞬时（<code class="prettyprint">transient</code>）的，并提供一个<code class="prettyprint">readResolve</code>方法返回现有的单例</p>
 
-<h2 id="4-通过私有构造器强化不可实例化的能力"><code class="prettyprint">4</code>.通过私有构造器强化不可实例化的能力</h2>
+<h2 id="4.通过私有构造器强化不可实例化的能力"><code class="prettyprint">4</code>.通过私有构造器强化不可实例化的能力</h2>
 
 <p>并在构造器中抛出异常</p>
 
-<h2 id="5-避免创建不必要的对象"><code class="prettyprint">5</code>.避免创建不必要的对象</h2>
+<h2 id="5.避免创建不必要的对象"><code class="prettyprint">5</code>.避免创建不必要的对象</h2>
 
 <p><code class="prettyprint">1</code>.如果对象是不可变的,将始终可以重用</p>
 
@@ -166,7 +166,7 @@
 
 <p><code class="prettyprint">4</code>.通过维护对象池来避免创建对象并不是好主意,除非对象非常昂贵(数据库连接池).</p>
 
-<h2 id="6-消除过期的对象引用"><code class="prettyprint">6</code>.消除过期的对象引用</h2>
+<h2 id="6.消除过期的对象引用"><code class="prettyprint">6</code>.消除过期的对象引用</h2>
 
 <p>内存泄露常见来源：</p>
 
@@ -186,7 +186,7 @@
 
 <p><code class="prettyprint">4</code>.<strong>虚引用</strong> <code class="prettyprint">PhantomReference</code>：也称为幽灵引用或幻影引用，是最弱的一种引用关系。一个对象是否有虚引用存在，完全不会对其生存时间构成影响，也无法通过虚引用来获得一个实例。 为对象设置一个虚引用的唯一目的就是能在这个对象被GC回收时收到一个系统通知。</p>
 
-<h2 id="7-避免使用终结方法"><code class="prettyprint">7</code>.避免使用终结方法</h2>
+<h2 id="7.避免使用终结方法"><code class="prettyprint">7</code>.避免使用终结方法</h2>
 
 <p><code class="prettyprint">1</code>.终结方法不能保证会被及时执行，也不能保证会被执行，所以不应该依赖终结方法来更新重要的持久状态</p>
 
@@ -210,7 +210,7 @@
 
 <h1 id="二-通用方法"><code class="prettyprint">二</code> 通用方法</h1>
 
-<h2 id="8-覆盖equals时请遵守通用约定"><code class="prettyprint">8</code>.覆盖equals时请遵守通用约定</h2>
+<h2 id="8.覆盖equals时请遵守通用约定"><code class="prettyprint">8</code>.覆盖equals时请遵守通用约定</h2>
 
 <p>必须遵守<code class="prettyprint">自反性</code>、<code class="prettyprint">对称性</code>、<code class="prettyprint">传递性</code>、<code class="prettyprint">一致性</code>、<code class="prettyprint">非空性</code></p>
 
@@ -238,7 +238,7 @@
 
 <p><code class="prettyprint">10</code>.优先用<strong>组合+公有视图</strong>的方式扩展值组件，而不是用继承</p>
 
-<h2 id="9-覆盖equals时总要覆盖hashcode"><code class="prettyprint">9</code>.覆盖equals时总要覆盖hashCode</h2>
+<h2 id="9.覆盖equals时总要覆盖hashcode"><code class="prettyprint">9</code>.覆盖equals时总要覆盖hashCode</h2>
 
 <p><code class="prettyprint">1</code>.相同的对象必须具有相同的hashCode(在hash表中,hashCode用来定位hash bucket,如果相等的对象有不同的hashCode,那么hash表将从错误的hash bucket中寻找对象,最后会判定为不存在)</p>
 
@@ -250,7 +250,7 @@
 
 <p><code class="prettyprint">5</code>.不要试图排除关键域(equals用到的所有域)来提高性能，这样虽然会提高hashCode计算速度，但是会提高hashCode重复率，反而降低散列性能。</p>
 
-<h2 id="10-始终要覆盖tostring"><code class="prettyprint">10</code>.始终要覆盖toString</h2>
+<h2 id="10.始终要覆盖tostring"><code class="prettyprint">10</code>.始终要覆盖toString</h2>
 
 <p><code class="prettyprint">1</code>.优点：易于阅读，易于调试，易与其他应用交换数据</p>
 
@@ -260,7 +260,7 @@
 
 <p><code class="prettyprint">4</code>.对toString返回值中包含的关键内容提供访问方法</p>
 
-<h2 id="11-谨慎地覆盖clone"><code class="prettyprint">11</code>.谨慎地覆盖clone</h2>
+<h2 id="11.谨慎地覆盖clone"><code class="prettyprint">11</code>.谨慎地覆盖clone</h2>
 
 <p><code class="prettyprint">1</code>.实现Cloneable接口(空接口)需要提供一个<code class="prettyprint">public clone</code>(Object中声明为<code class="prettyprint">proteced</code>)方法</p>
 
@@ -286,7 +286,7 @@
 
 <p><code class="prettyprint">11</code>.用<code class="prettyprint">拷贝构造器</code>(即参数类型为类本身的构造器)或者<code class="prettyprint">拷贝工厂</code>代替clone，可以增加一个参数实现克隆对象的转型（例如接受一个Collection参数与一个Class参数）</p>
 
-<h2 id="12-考虑实现comparable接口"><code class="prettyprint">12</code>.考虑实现Comparable接口</h2>
+<h2 id="12.考虑实现comparable接口"><code class="prettyprint">12</code>.考虑实现Comparable接口</h2>
 
 <p><code class="prettyprint">1</code>.可以方便地使用各种泛型算法与Comparable的集合实现</p>
 
@@ -302,7 +302,7 @@
 
 <h1 id="三-类和接口"><code class="prettyprint">三</code> 类和接口</h1>
 
-<h2 id="13-使类和成员的可访问性最小化"><code class="prettyprint">13</code>.使类和成员的可访问性最小化</h2>
+<h2 id="13.使类和成员的可访问性最小化"><code class="prettyprint">13</code>.使类和成员的可访问性最小化</h2>
 
 <p><code class="prettyprint">1</code>.实例域决不能是公有的</p>
 
@@ -312,11 +312,11 @@
 
 <p>将数组变成不可变列表后再提供访问；或者在访问方法中返回数组的clone()</p>
 
-<h2 id="14-在公有类中使用访问方法而非公有域"><code class="prettyprint">14</code>.在公有类中使用访问方法而非公有域</h2>
+<h2 id="14.在公有类中使用访问方法而非公有域"><code class="prettyprint">14</code>.在公有类中使用访问方法而非公有域</h2>
 
 <p>暴露域将失去内部表示法的灵活性，也将失去对数据访问进行限制的能力</p>
 
-<h2 id="15-使可变性最小化"><code class="prettyprint">15</code>.使可变性最小化</h2>
+<h2 id="15.使可变性最小化"><code class="prettyprint">15</code>.使可变性最小化</h2>
 
 <p><code class="prettyprint">1</code>.创建不可变类的5条规则</p>
 
@@ -348,7 +348,7 @@
 
 <p><code class="prettyprint">9</code>.除非有必须的理由让类可变，否则类应该是不可变的；如果类无法做成不可变的，也应该尽力限制其可变性。因此域也应该是final的。</p>
 
-<h2 id="16-复合优先于继承"><code class="prettyprint">16</code>.复合优先于继承</h2>
+<h2 id="16.复合优先于继承"><code class="prettyprint">16</code>.复合优先于继承</h2>
 
 <p><code class="prettyprint">1</code>.继承破坏了封装性，子类依赖于父类的实现细节，若父类内部发生变动，将可能损坏子类。</p>
 
@@ -364,7 +364,7 @@
 
 <p><code class="prettyprint">7</code>.只有真正存在从属关系时，才应该使用继承</p>
 
-<h2 id="17-要么为继承而设计，并提供文档说明，要么就禁止继承"><code class="prettyprint">17</code>.要么为继承而设计，并提供文档说明，要么就禁止继承</h2>
+<h2 id="17.要么为继承而设计，并提供文档说明，要么就禁止继承"><code class="prettyprint">17</code>.要么为继承而设计，并提供文档说明，要么就禁止继承</h2>
 
 <p><code class="prettyprint">1</code>.<strong>决不能在构造器中调用可以被覆盖的方法</strong>，否则这样的方法将会在子类构造器之前运行，若是该方法中存在对域的访问，将会造成空指针异常</p>
 
@@ -376,7 +376,7 @@
 
 <p><code class="prettyprint">5</code>.如果必须让类可被继承，<strong>务必保证这个类永远不会调用可覆盖方法</strong>，可以机械地消除可覆盖方法的<code class="prettyprint">自用性</code>：将每个可覆盖方法的方法体移到一个私有的“<code class="prettyprint">辅助方法</code>中”，然后让可覆盖方法调用辅助方法实现功能，这样可以确保可覆盖方法永远不会干涉到父类的运行。</p>
 
-<h2 id="18-接口优于抽象类"><code class="prettyprint">18</code>.接口优于抽象类</h2>
+<h2 id="18.接口优于抽象类"><code class="prettyprint">18</code>.接口优于抽象类</h2>
 
 <p><code class="prettyprint">1</code>.现有的类易被更新，以实现新的接口</p>
 
@@ -396,7 +396,7 @@
 
 <p><code class="prettyprint">9</code>.接口通常是定义允许多个实现的类型的最佳途径，但是当<strong>演变</strong>的容易性比<strong>灵活性</strong>和<strong>功能性</strong>更重要时例外。</p>
 
-<h2 id="19-接口只用于定义类型"><code class="prettyprint">19</code>.接口只用于定义类型</h2>
+<h2 id="19.接口只用于定义类型"><code class="prettyprint">19</code>.接口只用于定义类型</h2>
 
 <p><code class="prettyprint">1</code>.常量接口模式是对接口的不良使用</p>
 
@@ -404,7 +404,7 @@
 
 <p><code class="prettyprint">3</code>.如果大量利用工具类来导出常量，可以通过利用<code class="prettyprint">静态导入</code>机制，避免用类名来修饰常量名。（1.5版本后）</p>
 
-<h2 id="20-类层次优于标签类"><code class="prettyprint">20</code>.类层次优于标签类</h2>
+<h2 id="20.类层次优于标签类"><code class="prettyprint">20</code>.类层次优于标签类</h2>
 
 <p><code class="prettyprint">1</code>.标签类过于冗长，容易出错，并且效率低下</p>
 
@@ -412,7 +412,7 @@
 
 <p><code class="prettyprint">3</code>.类层次的另一种好处在于，它们可以用来反映类型之间本质上的层次关系，有助于增强灵活性，并进行更好的编译时类型检查。</p>
 
-<h2 id="21-用函数对象表示策略"><code class="prettyprint">21</code>.用函数对象表示策略</h2>
+<h2 id="21.用函数对象表示策略"><code class="prettyprint">21</code>.用函数对象表示策略</h2>
 
 <p><code class="prettyprint">1</code>.如果一个类仅仅导出一个方法，它的实例实际上就等同于一个指向该方法的指针。</p>
 
@@ -422,7 +422,7 @@
 
 <p><code class="prettyprint">4</code>.宿主类可以导出公有的静态域（或静态工厂方法），其类型为策略接口，具体的策略类可以是宿主类的私有嵌套类。</p>
 
-<h2 id="22-优先考虑静态成员类"><code class="prettyprint">22</code>.优先考虑静态成员类</h2>
+<h2 id="22.优先考虑静态成员类"><code class="prettyprint">22</code>.优先考虑静态成员类</h2>
 
 <p><code class="prettyprint">1</code>.嵌套类存在的目的应该只是为它的外围类提供服务。</p>
 
@@ -446,7 +446,7 @@
 
 <h1 id="四-泛型"><code class="prettyprint">四</code> 泛型</h1>
 
-<h2 id="23-不要在新代码中使用原生态类型"><code class="prettyprint">23</code>.不要在新代码中使用原生态类型</h2>
+<h2 id="23.不要在新代码中使用原生态类型"><code class="prettyprint">23</code>.不要在新代码中使用原生态类型</h2>
 
 <p><code class="prettyprint">1</code>.错误应该尽早发现，最好在编译期就发现。</p>
 
@@ -456,7 +456,7 @@
 
 <p><code class="prettyprint">4</code>.在类文字中必须使用原生态类型；因为泛型会被擦除，所以<code class="prettyprint">instanceof</code>操作符使用原生类型就可以了。</p>
 
-<h2 id="24-消除非受检警告"><code class="prettyprint">24</code>.消除非受检警告</h2>
+<h2 id="24.消除非受检警告"><code class="prettyprint">24</code>.消除非受检警告</h2>
 
 <p><code class="prettyprint">1</code>.泛型相关的编译警告：</p>
 
@@ -479,7 +479,7 @@
 
 <p><code class="prettyprint">6</code>.每当使用<code class="prettyprint">@SuppressWarnings(&quot;unchecked&quot;)</code>时，都要添加一条注释，说明为什么这么做是安全的。</p>
 
-<h2 id="25-列表优先于数组"><code class="prettyprint">25</code>.列表优先于数组</h2>
+<h2 id="25.列表优先于数组"><code class="prettyprint">25</code>.列表优先于数组</h2>
 
 <p><code class="prettyprint">1</code>.数组与泛型的区别</p>
 
@@ -503,19 +503,19 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">5</code>.不可具体化的类型数组转换只能在特殊情况下使用。</p>
 
-<h2 id="26-优先考虑泛型"><code class="prettyprint">26</code>.优先考虑泛型</h2>
+<h2 id="26.优先考虑泛型"><code class="prettyprint">26</code>.优先考虑泛型</h2>
 
 <p><code class="prettyprint">1</code>.禁止数组类型的未受检转换比禁止标量类型的更加危险</p>
 
 <p><code class="prettyprint">2</code>.使用泛型比使用需要在客户端代码中进行转换的类型更加安全，也更加容易，在设计新类型的时候，要确保不需要这种转换就能使用。</p>
 
-<h2 id="27-优先考虑泛型方法"><code class="prettyprint">27</code>.优先考虑泛型方法</h2>
+<h2 id="27.优先考虑泛型方法"><code class="prettyprint">27</code>.优先考虑泛型方法</h2>
 
 <p><code class="prettyprint">1</code>.如果泛型方法返回的对象是无状态的，可以考虑将该对象做成<code class="prettyprint">泛型单例</code></p>
 
 <p><code class="prettyprint">2</code>.调用泛型方法时，编译器会对返回值进行类型推到，以适应接收者的类型</p>
 
-<h2 id="28-利用有限通配符来提升api的灵活性"><code class="prettyprint">28</code>.利用有限通配符来提升API的灵活性</h2>
+<h2 id="28.利用有限通配符来提升api的灵活性"><code class="prettyprint">28</code>.利用有限通配符来提升API的灵活性</h2>
 
 <p><code class="prettyprint">1</code>.泛型中使用<code class="prettyprint">extends</code>时，每个类型都是自身的子类型；使用<code class="prettyprint">super</code>时，每个类型都是自身的超类型。</p>
 
@@ -529,7 +529,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">6</code>.不能把null之外的任何值放进List&lt;?&gt;中</p>
 
-<h2 id="29-优先考虑类型安全的异构容器"><code class="prettyprint">29</code>.优先考虑类型安全的异构容器</h2>
+<h2 id="29.优先考虑类型安全的异构容器"><code class="prettyprint">29</code>.优先考虑类型安全的异构容器</h2>
 
 <p><code class="prettyprint">1</code>.<code class="prettyprint">cast</code>方法是java的cast操作符的动态模拟，它只检验它的参数是否为Class对象所表示的类型的实例，如果是，就返回参数，否则抛出ClassCastException</p>
 
@@ -550,7 +550,7 @@ String s = stringLists[0].get(0);
 
 <h1 id="五-枚举和注解"><code class="prettyprint">五</code> 枚举和注解</h1>
 
-<h2 id="30-用enum代替int常量"><code class="prettyprint">30</code>.用enum代替int常量</h2>
+<h2 id="30.用enum代替int常量"><code class="prettyprint">30</code>.用enum代替int常量</h2>
 
 <p><code class="prettyprint">1</code>.因为没有可以访问的构造器，枚举类型是真正的<code class="prettyprint">final</code>。</p>
 
@@ -566,13 +566,13 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">7</code>.如果多个枚举常量同时共享多个行为，要考虑<code class="prettyprint">策略枚举</code>。</p>
 
-<h2 id="31-用实例域代替序数"><code class="prettyprint">31</code>.用实例域代替序数</h2>
+<h2 id="31.用实例域代替序数"><code class="prettyprint">31</code>.用实例域代替序数</h2>
 
 <p><code class="prettyprint">1</code>.所有枚举都有一个<code class="prettyprint">ordinal</code>方法，它返回每个枚举常量在类型中的数字位置</p>
 
 <p><code class="prettyprint">2</code>.永远不要根据枚举的序数导出与他关联的值，而是要将值保存在一个实例域中。</p>
 
-<h2 id="32-用enumset代替位域"><code class="prettyprint">32</code>.用EnumSet代替位域</h2>
+<h2 id="32.用enumset代替位域"><code class="prettyprint">32</code>.用EnumSet代替位域</h2>
 
 <p><code class="prettyprint">1</code>.<code class="prettyprint">or</code>位运算将几个常量合并到一个集合中，称为<code class="prettyprint">位域</code>。（形如111→rwx）</p>
 
@@ -580,19 +580,19 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">3</code>.截止jdk1.6，无法创建不可变的EnumSet</p>
 
-<h2 id="33-用enummap代替序数索引"><code class="prettyprint">33</code>.用EnumMap代替序数索引</h2>
+<h2 id="33.用enummap代替序数索引"><code class="prettyprint">33</code>.用EnumMap代替序数索引</h2>
 
 <p><code class="prettyprint">1</code>.<code class="prettyprint">EnumMap</code>构造器采用键类型的Class对象：这是一个有限制的类型令牌，它提供了运行时的泛型信息。实例化需要指定Class类型，可以保存同一个类型的对象与值的映射关系</p>
 
 <p><code class="prettyprint">2</code>.最好不要用序数来索引数组，而要用EnumMap，如果需要表示的关系是多维的，就用嵌套的EnumMap</p>
 
-<h2 id="34-用接口模拟可伸缩的枚举"><code class="prettyprint">34</code>.用接口模拟可伸缩的枚举</h2>
+<h2 id="34.用接口模拟可伸缩的枚举"><code class="prettyprint">34</code>.用接口模拟可伸缩的枚举</h2>
 
 <p><code class="prettyprint">1</code>.用接口模拟可伸缩的枚举有个小小的不足，即无法实现从一个枚举类型继承到另一个枚举类型。</p>
 
 <p><code class="prettyprint">2</code>.虽然无法编写可扩展的枚举类型，却可以通过编写接口以及实现该接口的基础枚举类型，模拟可伸缩的枚举。<code class="prettyprint">&lt;T extends Enum&lt;T&gt; &amp; interfaceType&gt;</code></p>
 
-<h2 id="35-注解优先于命名模式"><code class="prettyprint">35</code>.注解优先于命名模式</h2>
+<h2 id="35.注解优先于命名模式"><code class="prettyprint">35</code>.注解优先于命名模式</h2>
 
 <p><code class="prettyprint">1</code>.注解的声明类型就是自身通过<code class="prettyprint">Retention</code>和<code class="prettyprint">Target</code> 注解进行注解，<code class="prettyprint">@Retention(RetentionPolicy.RUNTIME)</code>元注解表明，应该在运行时保留；<code class="prettyprint">@Target(ElementType.METHOD)</code>元注解表明，只有在方法声明中才是合法的。</p>
 
@@ -602,7 +602,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">4</code>.如果编写的工具需要在源文件上添加信息，就要定义一组适当的注解类型。</p>
 
-<h2 id="36-坚持使用override注解"><code class="prettyprint">36</code>.坚持使用Override注解</h2>
+<h2 id="36.坚持使用override注解"><code class="prettyprint">36</code>.坚持使用Override注解</h2>
 
 <p><code class="prettyprint">1</code>.<code class="prettyprint">Override</code>会对标记的方法进行代码检查，确保该方法成功地被重写了。</p>
 
@@ -610,7 +610,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">3</code>.在抽象类或接口中使用Override可以确保不会添加新的方法。</p>
 
-<h2 id="37-用标记接口定义类型"><code class="prettyprint">37</code>.用标记接口定义类型</h2>
+<h2 id="37.用标记接口定义类型"><code class="prettyprint">37</code>.用标记接口定义类型</h2>
 
 <p><code class="prettyprint">1</code>.标记接口是没有包含方法声明的接口，只是指明了实现类应该具有的属性。</p>
 
@@ -640,7 +640,7 @@ String s = stringLists[0].get(0);
 
 <h1 id="六-方法"><code class="prettyprint">六</code> 方法</h1>
 
-<h2 id="38-检查参数的有效性"><code class="prettyprint">38</code>.检查参数的有效性</h2>
+<h2 id="38.检查参数的有效性"><code class="prettyprint">38</code>.检查参数的有效性</h2>
 
 <p><code class="prettyprint">1</code>.应该在发生错误后，能够尽快检测出错误，不要让错误在过深的地方爆发出来。</p>
 
@@ -652,7 +652,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">5</code>.使用<code class="prettyprint">异常转译</code>技术，将计算过程中抛出的异常转换为正确的异常。</p>
 
-<h2 id="39-必要时进行保护性拷贝"><code class="prettyprint">39</code>.必要时进行保护性拷贝</h2>
+<h2 id="39.必要时进行保护性拷贝"><code class="prettyprint">39</code>.必要时进行保护性拷贝</h2>
 
 <p><code class="prettyprint">1</code>.对构造器的每个可变参数进行保护性拷贝</p>
 
@@ -670,7 +670,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">8</code>.包装类一般客户端自己使用，无需使用保护性拷贝。</p>
 
-<h2 id="40-谨慎设计方法签名"><code class="prettyprint">40</code>.谨慎设计方法签名</h2>
+<h2 id="40.谨慎设计方法签名"><code class="prettyprint">40</code>.谨慎设计方法签名</h2>
 
 <p><code class="prettyprint">1</code>.谨慎地选择方法的名称</p>
 
@@ -692,7 +692,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">5</code>.对于boolean参数，要优先使用连个元素的枚举类型。</p>
 
-<h2 id="41-慎用重载"><code class="prettyprint">41</code>.慎用重载</h2>
+<h2 id="41.慎用重载"><code class="prettyprint">41</code>.慎用重载</h2>
 
 <p><code class="prettyprint">1</code>.要调用哪个重载方法是在<code class="prettyprint">编译</code>时做出决定的。</p>
 
@@ -710,7 +710,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">8</code>.当传递的参数没有本质的不同时，必须确保所有的重载方法行为一致，做法是让更具体化的重载方法把调用转发给更一般化的重载方法。</p>
 
-<h2 id="42-慎用可变参数"><code class="prettyprint">42</code>.慎用可变参数</h2>
+<h2 id="42.慎用可变参数"><code class="prettyprint">42</code>.慎用可变参数</h2>
 
 <p><code class="prettyprint">1</code>.参数数量检测无法在编译期完成</p>
 
@@ -722,7 +722,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">5</code>.提供大多数使用情况下的不可变参数方法，再额外附加可变参数方法（<code class="prettyprint">EnumSet.of</code>）</p>
 
-<h2 id="43-返回零长度的数组或者集合，而不是null"><code class="prettyprint">43</code>.返回零长度的数组或者集合，而不是null</h2>
+<h2 id="43.返回零长度的数组或者集合，而不是null"><code class="prettyprint">43</code>.返回零长度的数组或者集合，而不是null</h2>
 
 <p><code class="prettyprint">1</code>.如果返回null，每次调用该方法时都会需要进行空值判断</p>
 
@@ -734,7 +734,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">Collections.emptyMap</code>）</p>
 
-<h2 id="44-为所有导出的api元素编写文档注释"><code class="prettyprint">44</code>.为所有导出的API元素编写文档注释</h2>
+<h2 id="44.为所有导出的api元素编写文档注释"><code class="prettyprint">44</code>.为所有导出的API元素编写文档注释</h2>
 
 <p><code class="prettyprint">1</code>.文档注释应该简洁地描述出它和客户端之间的约定</p>
 
@@ -754,7 +754,7 @@ String s = stringLists[0].get(0);
 
 <h1 id="七-通用程序设计"><code class="prettyprint">七</code> 通用程序设计</h1>
 
-<h2 id="45-将局部变量的作用域最小化"><code class="prettyprint">45</code>.将局部变量的作用域最小化</h2>
+<h2 id="45.将局部变量的作用域最小化"><code class="prettyprint">45</code>.将局部变量的作用域最小化</h2>
 
 <p><code class="prettyprint">1</code>.最有力的方法就是在第一次使用它的地方声明</p>
 
@@ -762,7 +762,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">3</code>.循环中提供了特殊的机会来将变量的作用域最小化，如果在循环终止后不再需要循环变量的内容，<code class="prettyprint">for</code>循环就优先于<code class="prettyprint">while</code>循环。</p>
 
-<h2 id="46-for-each-循环优先于传统for循环"><code class="prettyprint">46</code>.for-each 循环优先于传统for循环</h2>
+<h2 id="46.for-each-循环优先于传统for循环"><code class="prettyprint">46</code>.for-each 循环优先于传统for循环</h2>
 
 <p><code class="prettyprint">1</code>.嵌套的for-each循环，外层循环的对象可以在内层对象中保持，不会随内层循环移动指针。</p>
 
@@ -776,7 +776,7 @@ String s = stringLists[0].get(0);
 </ul>
 </blockquote>
 
-<h2 id="47-了解和使用类库"><code class="prettyprint">47</code>.了解和使用类库</h2>
+<h2 id="47.了解和使用类库"><code class="prettyprint">47</code>.了解和使用类库</h2>
 
 <p><code class="prettyprint">java.lang</code>；</p>
 
@@ -786,11 +786,11 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">java.util.concurrent</code>；</p>
 
-<h2 id="48-如果需要精确的答案，请避免使用float和double"><code class="prettyprint">48</code>.如果需要精确的答案，请避免使用float和double</h2>
+<h2 id="48.如果需要精确的答案，请避免使用float和double"><code class="prettyprint">48</code>.如果需要精确的答案，请避免使用float和double</h2>
 
 <p>使用<code class="prettyprint">BigDecimal</code>，<code class="prettyprint">int</code> 或者 <code class="prettyprint">long</code> 进行货币计算</p>
 
-<h2 id="49-基本类型优先于装箱基本类型"><code class="prettyprint">49</code>.基本类型优先于装箱基本类型</h2>
+<h2 id="49.基本类型优先于装箱基本类型"><code class="prettyprint">49</code>.基本类型优先于装箱基本类型</h2>
 
 <p><code class="prettyprint">1</code>.基本类型与装箱基本类型的区别</p>
 
@@ -808,7 +808,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">4</code>.在集合中只能使用装箱基本类型</p>
 
-<h2 id="50-如果其他类型更适合，则尽量避免使用字符串"><code class="prettyprint">50</code>.如果其他类型更适合，则尽量避免使用字符串</h2>
+<h2 id="50.如果其他类型更适合，则尽量避免使用字符串"><code class="prettyprint">50</code>.如果其他类型更适合，则尽量避免使用字符串</h2>
 
 <p><code class="prettyprint">1</code>.字符串不适合代替其他的值类型</p>
 
@@ -818,13 +818,13 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">4</code>.字符串不可替代控制共享资源访问权限的键</p>
 
-<h2 id="51-当心字符串连接的性能"><code class="prettyprint">51</code>.当心字符串连接的性能</h2>
+<h2 id="51.当心字符串连接的性能"><code class="prettyprint">51</code>.当心字符串连接的性能</h2>
 
 <p><code class="prettyprint">1</code>.为连接n个字符串而重复地使用字符串连接操作符，需要n的平方级的时间</p>
 
 <p><code class="prettyprint">2</code>.为了性能，用<code class="prettyprint">StringBuilder</code>替代String</p>
 
-<h2 id="52-通过接口引用对象"><code class="prettyprint">52</code>.通过接口引用对象</h2>
+<h2 id="52.通过接口引用对象"><code class="prettyprint">52</code>.通过接口引用对象</h2>
 
 <p><code class="prettyprint">1</code>.如果有合适的接口类型存在，那么对于参数，返回值，变量和域来说，就都应该使用接口类型进行声明</p>
 
@@ -832,11 +832,11 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">3</code>.如果程序依赖于类中额外的方法，那么这种类应该只被用来引用实例，而不应该作为参数类型。</p>
 
-<h2 id="53-接口优先于反射机制"><code class="prettyprint">53</code>.接口优先于反射机制</h2>
+<h2 id="53.接口优先于反射机制"><code class="prettyprint">53</code>.接口优先于反射机制</h2>
 
 <p>反射功能应该只有在设计时被用到，或者只是用来创建对象，程序在运行时不应该以反射方式访问对象</p>
 
-<h2 id="54-谨慎地使用本地方法"><code class="prettyprint">54</code>.谨慎地使用本地方法</h2>
+<h2 id="54.谨慎地使用本地方法"><code class="prettyprint">54</code>.谨慎地使用本地方法</h2>
 
 <p><code class="prettyprint">1</code>.本地方法3个用途</p>
 
@@ -852,7 +852,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">3</code>.本地语言是<code class="prettyprint">不安全</code>的，无法免受内存毁坏错误的影响。</p>
 
-<h2 id="55-谨慎地进行优化"><code class="prettyprint">55</code>.谨慎地进行优化</h2>
+<h2 id="55.谨慎地进行优化"><code class="prettyprint">55</code>.谨慎地进行优化</h2>
 
 <p><code class="prettyprint">1</code>.好的程序体现了信息隐藏的原则，只要有可能，就要把设计决策（暂时理解为业务逻辑）集中在单个模块中，因此，可以改变单个决策，而不会影响到系统的其他部分。</p>
 
@@ -868,7 +868,7 @@ String s = stringLists[0].get(0);
 </ul>
 </blockquote>
 
-<h2 id="56-遵守普遍接受的命名习惯"><code class="prettyprint">56</code>.遵守普遍接受的命名习惯</h2>
+<h2 id="56.遵守普遍接受的命名习惯"><code class="prettyprint">56</code>.遵守普遍接受的命名习惯</h2>
 
 <p><code class="prettyprint">1</code>.《<code class="prettyprint">The Java Language Specification</code>》</p>
 
@@ -892,7 +892,7 @@ String s = stringLists[0].get(0);
 
 <h1 id="八-异常"><code class="prettyprint">八</code> 异常</h1>
 
-<h2 id="57-只针对不正常情况使用异常"><code class="prettyprint">57</code>.只针对不正常情况使用异常</h2>
+<h2 id="57.只针对不正常情况使用异常"><code class="prettyprint">57</code>.只针对不正常情况使用异常</h2>
 
 <p><code class="prettyprint">1</code>.异常机制的设计初衷是为了不正常的情形，很少有JVM实现会对它进行优化；把代码放在try-catch中反而阻止了本来可以进行的优化；对数组进行遍历的标准模式并会不导致冗余的检查，有些现代的JVM实现会将它们优化掉。</p>
 
@@ -902,7 +902,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">4</code>.另一种方法是<code class="prettyprint">可识别返回值法</code>，并发环境下或状态检查影响性能时更适用，如果所有情况等同，优先使用状态检测法。</p>
 
-<h2 id="58-对可恢复的情况使用受检异常，对编程错误使用运行时异常"><code class="prettyprint">58</code>.对可恢复的情况使用受检异常，对编程错误使用运行时异常</h2>
+<h2 id="58.对可恢复的情况使用受检异常，对编程错误使用运行时异常"><code class="prettyprint">58</code>.对可恢复的情况使用受检异常，对编程错误使用运行时异常</h2>
 
 <p><code class="prettyprint">1</code>.三种可抛出结构：<code class="prettyprint">受检异常</code>，<code class="prettyprint">运行时异常</code>，<code class="prettyprint">错误</code></p>
 
@@ -916,19 +916,19 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">6</code>.受检的异常往往需要表明可回复条件，提供一些便于查询信息的方法尤其重要</p>
 
-<h2 id="59-避免不必要地使用受检的异常"><code class="prettyprint">59</code>.避免不必要地使用受检的异常</h2>
+<h2 id="59.避免不必要地使用受检的异常"><code class="prettyprint">59</code>.避免不必要地使用受检的异常</h2>
 
 <p><code class="prettyprint">1</code>.如果正确使用API不能阻止异常的产生，而一旦产生异常API使用者能够立即采取有效的动作，就值得使用受检的异常，除非两个条件都成立，否则更适合使用<strong>未受检</strong>异常。</p>
 
 <p><code class="prettyprint">2</code>.把受检的异常变成未受检异常的方法是把抛出异常的方法分成两个方法，其中一个方法返回boolean表示是否应该抛出异常（类似状态检测法）。这种方法在并发环境下或者异常检测很耗性能时则不适用。</p>
 
-<h2 id="60-优先使用标准的异常"><code class="prettyprint">60</code>.优先使用标准的异常</h2>
+<h2 id="60.优先使用标准的异常"><code class="prettyprint">60</code>.优先使用标准的异常</h2>
 
 <p><code class="prettyprint">ConcurrentModificationException</code>；</p>
 
 <p><code class="prettyprint">UnsupportedOperationException</code></p>
 
-<h2 id="61-抛出与抽象相对应的异常"><code class="prettyprint">61</code>.抛出与抽象相对应的异常</h2>
+<h2 id="61.抛出与抽象相对应的异常"><code class="prettyprint">61</code>.抛出与抽象相对应的异常</h2>
 
 <p><code class="prettyprint">1</code>.更高层的实现应该捕获低层的异常，同时抛出可以按照高层抽象进行解释的异常，这种做法称为<code class="prettyprint">异常转译</code></p>
 
@@ -938,7 +938,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">4</code>.异常转译不应滥用，更好的做法是<strong>及时进行参数检查</strong>，尽早中断异常链。</p>
 
-<h2 id="62-每个方法抛出的异常都要有文档"><code class="prettyprint">62</code>.每个方法抛出的异常都要有文档</h2>
+<h2 id="62.每个方法抛出的异常都要有文档"><code class="prettyprint">62</code>.每个方法抛出的异常都要有文档</h2>
 
 <p><code class="prettyprint">1</code>.始终要单独声明受检的异常，而不是抛出多个异常的共同的超类，并且利用<code class="prettyprint">@throws</code>标记，准确记录下抛出每个异常的条件</p>
 
@@ -946,13 +946,13 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">3</code>.如果一个类中的多个方法出于同样的原因抛出同样的异常，可以将异常的信息写入到类的文档注释中。</p>
 
-<h2 id="63-在细节消息中包含能捕捉失败的信息"><code class="prettyprint">63</code>.在细节消息中包含能捕捉失败的信息</h2>
+<h2 id="63.在细节消息中包含能捕捉失败的信息"><code class="prettyprint">63</code>.在细节消息中包含能捕捉失败的信息</h2>
 
 <p><code class="prettyprint">1</code>.如果捕获失败，异常的细节信息应该包含所有对异常有贡献的参数和域的值</p>
 
 <p><code class="prettyprint">2</code>.在异常的<strong>构造器</strong>中引入细节信息</p>
 
-<h2 id="64-努力使失败保持原子性"><code class="prettyprint">64</code>.努力使失败保持原子性</h2>
+<h2 id="64.努力使失败保持原子性"><code class="prettyprint">64</code>.努力使失败保持原子性</h2>
 
 <p><code class="prettyprint">1</code>.失败的方法调用应该使对象保持在被调用之前的状态</p>
 
@@ -969,7 +969,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">3</code>.在缺乏同步机制的情况下并发访问对象，难以保持失败原子性。</p>
 
-<h2 id="65-不要忽略异常"><code class="prettyprint">65</code>.不要忽略异常</h2>
+<h2 id="65.不要忽略异常"><code class="prettyprint">65</code>.不要忽略异常</h2>
 
 <p>有一种情形可以忽略异常，即关闭FileInputStream时，因为文件状态没有改变，不必终止当前操作，即使这种情况下，也应该将异常信息记录下来，以便排查。</p>
 
@@ -977,7 +977,7 @@ String s = stringLists[0].get(0);
 
 <h2 id="九-并发"><code class="prettyprint">九</code> 并发</h2>
 
-<h2 id="66-同步访问共享的可变数据"><code class="prettyprint">66</code>.同步访问共享的可变数据</h2>
+<h2 id="66.同步访问共享的可变数据"><code class="prettyprint">66</code>.同步访问共享的可变数据</h2>
 
 <p><code class="prettyprint">1</code>.同步可以保证每个线程看到的对象处于一致 的状态中；保证每个线程都看到锁对象被修改的结果。</p>
 
@@ -997,7 +997,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">9</code>.安全性失败：一个线程修改非原子变量时，另一个线程过来读取，此时只能读取到<strong>过渡</strong>状态的数据。</p>
 
-<h2 id="67-避免过度同步"><code class="prettyprint">67</code>.避免过度同步</h2>
+<h2 id="67.避免过度同步"><code class="prettyprint">67</code>.避免过度同步</h2>
 
 <p><code class="prettyprint">1</code>.为了避免活性失败和安全性失败，在一个被同步的方法或者代码块中，永远不要放弃对客户端的控制。尽量不要在同步代码块中调用可被覆盖的方法或者客户端提供的方法（<strong>原则上永远不要信任客户端</strong>）</p>
 
@@ -1019,7 +1019,7 @@ String s = stringLists[0].get(0);
 
 <p><code class="prettyprint">10</code>.如果方法修改了静态域，那么就必须同步对这个域的访问，即使它往往只作用于单个线程，这是为了可靠的线程通信</p>
 
-<h2 id="68-executor和task优先于线程"><code class="prettyprint">68</code>.executor和task优先于线程</h2>
+<h2 id="68.executor和task优先于线程"><code class="prettyprint">68</code>.executor和task优先于线程</h2>
 
 <p>1.<code class="prettyprint">Executor Framework</code> </p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -1040,7 +1040,7 @@ ExecutorCompletionService
 
 <p><code class="prettyprint">6</code>.《<code class="prettyprint">Java Concurrency in Practice</code>》</p>
 
-<h2 id="69-并发工具优先于wait和notify"><code class="prettyprint">69</code>.并发工具优先于wait和notify</h2>
+<h2 id="69.并发工具优先于wait和notify"><code class="prettyprint">69</code>.并发工具优先于wait和notify</h2>
 
 <p><code class="prettyprint">1</code>.concurrent包中三类工具：</p>
 
@@ -1070,7 +1070,7 @@ ExecutorCompletionService
 
 <p><code class="prettyprint">10</code>.优先使用<code class="prettyprint">notifyAll</code>，因为被意外唤醒的线程会在循环中检查条件，如果条件不满足，会继续等待。</p>
 
-<h2 id="70-线程安全性的文档化"><code class="prettyprint">70</code>.线程安全性的文档化</h2>
+<h2 id="70.线程安全性的文档化"><code class="prettyprint">70</code>.线程安全性的文档化</h2>
 
 <p><code class="prettyprint">1</code>.在一个方法声明中出现synchronized修饰符，这个是实现细节，不是导出API的一部分</p>
 
@@ -1092,7 +1092,7 @@ ExecutorCompletionService
 
 <p><code class="prettyprint">5</code>.私有锁对象必须声明为final的，只能用在无条件线程安全类上，有条件线程安全类不能使用，因为外部调用时无法获得锁。</p>
 
-<h2 id="71-慎用延迟初始化"><code class="prettyprint">71</code>.慎用延迟初始化</h2>
+<h2 id="71.慎用延迟初始化"><code class="prettyprint">71</code>.慎用延迟初始化</h2>
 
 <p><code class="prettyprint">1</code>.对静态域使用延迟初始化，用 <code class="prettyprint">lazy initialization holder class</code> 模式（静态私有内部类）</p>
 
@@ -1100,7 +1100,7 @@ ExecutorCompletionService
 
 <p><code class="prettyprint">3</code>.如果允许重复初始化，用<strong>单重检查模式</strong></p>
 
-<h2 id="72-不要依赖于线程调度器"><code class="prettyprint">72</code>.不要依赖于线程调度器</h2>
+<h2 id="72.不要依赖于线程调度器"><code class="prettyprint">72</code>.不要依赖于线程调度器</h2>
 
 <p><code class="prettyprint">1</code>.任何依赖于线程调度器来达到正确性或者性能要求的程序，很可能不可移植</p>
 
@@ -1112,13 +1112,13 @@ ExecutorCompletionService
 
 <p><code class="prettyprint">5</code>.线程优先级是Java平台上最<strong>不可移植</strong>的特征</p>
 
-<h2 id="73-避免使用线程组"><code class="prettyprint">73</code>.避免使用线程组</h2>
+<h2 id="73.避免使用线程组"><code class="prettyprint">73</code>.避免使用线程组</h2>
 
 <hr>
 
 <h1 id="十-序列化"><code class="prettyprint">十</code> 序列化</h1>
 
-<h2 id="74-谨慎地实现serializable接口"><code class="prettyprint">74</code>.谨慎地实现Serializable接口</h2>
+<h2 id="74.谨慎地实现serializable接口"><code class="prettyprint">74</code>.谨慎地实现Serializable接口</h2>
 
 <p><code class="prettyprint">1</code>.实现Serializable接口的代价是，</p>
 
@@ -1140,7 +1140,7 @@ ExecutorCompletionService
 
 <p><code class="prettyprint">7</code>.内部类不应该实现Serializable，内部类的默认序列化形式是定义不清楚的，然而静态成员类却可以实现Serializable</p>
 
-<h2 id="75-考虑使用自定义的序列化形式"><code class="prettyprint">75</code>.考虑使用自定义的序列化形式</h2>
+<h2 id="75.考虑使用自定义的序列化形式"><code class="prettyprint">75</code>.考虑使用自定义的序列化形式</h2>
 
 <p><code class="prettyprint">1</code>.如果没有先认真考虑默认的序列化形式是否合适，则不要贸然接受；理想的序列化形式应该只包含该对象所表示的<strong>逻辑数据</strong>，而逻辑数据与物理表示法应该是各自独立的</p>
 
@@ -1167,7 +1167,7 @@ ExecutorCompletionService
 
 <p><code class="prettyprint">9</code>.如果想为一个类生成一个新的版本，使这个类与现有的类不兼容，那么只需修改UID即可，反序列化时将会发生<code class="prettyprint">InvalidClassException</code></p>
 
-<h2 id="76-保护性地编写readobject方法"><code class="prettyprint">76</code>.保护性地编写readObject方法</h2>
+<h2 id="76.保护性地编写readobject方法"><code class="prettyprint">76</code>.保护性地编写readObject方法</h2>
 
 <p><code class="prettyprint">1</code>.《<code class="prettyprint">Java Object Serialization Specification</code>》</p>
 
@@ -1185,7 +1185,7 @@ ExecutorCompletionService
 
 <p><code class="prettyprint">6</code>.如果整个对象图在反序列化之后必须进行验证，则使用<code class="prettyprint">ObjectInputValidation</code>接口</p>
 
-<h2 id="77-对于实例的控制，枚举类型优先于readresolve"><code class="prettyprint">77</code>.对于实例的控制，枚举类型优先于readResolve</h2>
+<h2 id="77.对于实例的控制，枚举类型优先于readresolve"><code class="prettyprint">77</code>.对于实例的控制，枚举类型优先于readResolve</h2>
 
 <p><code class="prettyprint">1</code>.在反序列化之后，新建对象上的readResolve方法将被调用，然后该方法返回的对象将取代新建的对象</p>
 
@@ -1195,7 +1195,7 @@ ExecutorCompletionService
 
 <p><code class="prettyprint">4</code>.如果把readResolve放在一个<strong>final</strong>类上，它就应该是<strong>私有</strong>的；如果readResolve方法不是私有的，并且子类没有覆盖它，对序列化过的子类进行反序列化，将会获得一个<strong>超类</strong>的实例，可能出现ClassCastException</p>
 
-<h2 id="78-考虑用序列化代理代替序列化实例"><code class="prettyprint">78</code>.考虑用序列化代理代替序列化实例</h2>
+<h2 id="78.考虑用序列化代理代替序列化实例"><code class="prettyprint">78</code>.考虑用序列化代理代替序列化实例</h2>
 
 <p><code class="prettyprint">1</code>.实际在流之间传输的是代理对象，反序列化之后，代理对象通过<code class="prettyprint">readResolve</code>返回对象，此时通过构造器创建外围对象，构造器中自带参数检查；序列化时，外围类通过<code class="prettyprint">writeReplace</code>返回序列化代理实例。</p>
 
@@ -2161,68 +2161,6 @@ ExecutorCompletionService
                         
                     
 
-                    
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-04-09/rmi/">RMI</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-17/servlet-encode/">Servlet乱码分析</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-12/spring-security/">spring security 探秘</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-05/validator/">Bean Validation</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-02-22/javajs/">Java中用js解析json</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-02-13/sqlappend/">SQL 拼接</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-12-21/webservice/">WebService</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-12-13/java-newfeature/">Java8 新特性</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-11-18/java-concurrent/">Java Concurrent</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-08-20/jvm/">Java虚拟机</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-05-12/acturl-generic/">超类中的泛型</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-04-15/fileupload/">Custom Fileupload</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-03-22/reentrantlock/">可重入锁</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-03-16/tomcat-https/">Tomcat Https 配置</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2013-12-19/java-nio/">Java NIO</a>
-                            </li>
-                        
                     
                 </ul>
             </div>

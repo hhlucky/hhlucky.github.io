@@ -40,7 +40,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="http://hhlucky.github.io/">The Trees</a>
-                    <p class="navbar-text">你在暗夜里的生长延展,星星便是你结出的果子</p>
+                    <p class="navbar-text"></p>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -121,7 +121,7 @@
 <h2 id="示例">示例</h2>
 <div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="nd">@Test</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(){</span>
-        <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">SQL</span><span class="o">(){</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SQL</span><span class="o">(){</span> <span class="o">{</span>
             <span class="n">SELECT</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">);</span>
             <span class="n">SELECT</span><span class="o">(</span><span class="s">&quot;password&quot;</span><span class="o">);</span>
             <span class="n">SELECT</span><span class="o">(</span><span class="s">&quot;sex&quot;</span><span class="o">);</span>
@@ -164,107 +164,107 @@
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">UPDATE</span><span class="o">(</span><span class="n">String</span> <span class="n">table</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">statementType</span> <span class="o">=</span> <span class="n">SQLStatement</span><span class="o">.</span><span class="na">StatementType</span><span class="o">.</span><span class="na">UPDATE</span><span class="o">;</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">tables</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">table</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">SET</span><span class="o">(</span><span class="n">String</span> <span class="n">sets</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">sets</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">sets</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">INSERT_INTO</span><span class="o">(</span><span class="n">String</span> <span class="n">tableName</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">statementType</span> <span class="o">=</span> <span class="n">SQLStatement</span><span class="o">.</span><span class="na">StatementType</span><span class="o">.</span><span class="na">INSERT</span><span class="o">;</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">tables</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">tableName</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">VALUES</span><span class="o">(</span><span class="n">String</span> <span class="n">columns</span><span class="o">,</span> <span class="n">String</span> <span class="n">values</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">columns</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">columns</span><span class="o">);</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">values</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">values</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">SELECT</span><span class="o">(</span><span class="n">String</span> <span class="n">columns</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">statementType</span> <span class="o">=</span> <span class="n">SQLStatement</span><span class="o">.</span><span class="na">StatementType</span><span class="o">.</span><span class="na">SELECT</span><span class="o">;</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">select</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">columns</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">SELECT_DISTINCT</span><span class="o">(</span><span class="n">String</span> <span class="n">columns</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">distinct</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
     <span class="n">SELECT</span><span class="o">(</span><span class="n">columns</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">DELETE_FROM</span><span class="o">(</span><span class="n">String</span> <span class="n">table</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">statementType</span> <span class="o">=</span> <span class="n">SQLStatement</span><span class="o">.</span><span class="na">StatementType</span><span class="o">.</span><span class="na">DELETE</span><span class="o">;</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">tables</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">table</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">FROM</span><span class="o">(</span><span class="n">String</span> <span class="n">table</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">tables</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">table</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">JOIN</span><span class="o">(</span><span class="n">String</span> <span class="n">join</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">join</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">join</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">INNER_JOIN</span><span class="o">(</span><span class="n">String</span> <span class="n">join</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">innerJoin</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">join</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">LEFT_OUTER_JOIN</span><span class="o">(</span><span class="n">String</span> <span class="n">join</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">leftOuterJoin</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">join</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">RIGHT_OUTER_JOIN</span><span class="o">(</span><span class="n">String</span> <span class="n">join</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">rightOuterJoin</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">join</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">OUTER_JOIN</span><span class="o">(</span><span class="n">String</span> <span class="n">join</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">outerJoin</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">join</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">WHERE</span><span class="o">(</span><span class="n">String</span> <span class="n">conditions</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">where</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">conditions</span><span class="o">);</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">lastList</span> <span class="o">=</span> <span class="n">sql</span><span class="o">().</span><span class="na">where</span><span class="o">;</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">OR</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">lastList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">OR</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">AND</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">lastList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">AND</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">GROUP_BY</span><span class="o">(</span><span class="n">String</span> <span class="n">columns</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">groupBy</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">columns</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">HAVING</span><span class="o">(</span><span class="n">String</span> <span class="n">conditions</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">having</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">conditions</span><span class="o">);</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">lastList</span> <span class="o">=</span> <span class="n">sql</span><span class="o">().</span><span class="na">having</span><span class="o">;</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="n">T</span> <span class="nf">ORDER_BY</span><span class="o">(</span><span class="n">String</span> <span class="n">columns</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">orderBy</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">columns</span><span class="o">);</span>
-    <span class="k">return</span> <span class="nf">getSelf</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">getSelf</span><span class="o">();</span>
   <span class="o">}</span>
 
-  <span class="kd">private</span> <span class="n">SQLStatement</span> <span class="n">sql</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">SQLStatement</span><span class="o">();</span>
+  <span class="kd">private</span> <span class="n">SQLStatement</span> <span class="n">sql</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SQLStatement</span><span class="o">();</span>
 
   <span class="kd">private</span> <span class="n">SQLStatement</span> <span class="nf">sql</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="n">sql</span><span class="o">;</span>
@@ -277,7 +277,7 @@
 
   <span class="nd">@Override</span>
   <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="o">();</span>
+    <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
     <span class="n">sql</span><span class="o">().</span><span class="na">sql</span><span class="o">(</span><span class="n">sb</span><span class="o">);</span>
     <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
   <span class="o">}</span>
@@ -296,7 +296,7 @@
         <span class="k">if</span> <span class="o">(</span><span class="n">empty</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="n">empty</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
         <span class="n">a</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
       <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
       <span class="o">}</span>
       <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
     <span class="o">}</span>
@@ -394,7 +394,7 @@
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">sql</span><span class="o">(</span><span class="n">Appendable</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">SafeAppendable</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">SafeAppendable</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+      <span class="n">SafeAppendable</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SafeAppendable</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
       <span class="k">if</span> <span class="o">(</span><span class="n">statementType</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
       <span class="o">}</span>
@@ -402,23 +402,23 @@
       <span class="n">String</span> <span class="n">answer</span><span class="o">;</span>
 
       <span class="k">switch</span> <span class="o">(</span><span class="n">statementType</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">case</span> <span class="nl">DELETE:</span>
+        <span class="k">case</span> <span class="n">DELETE</span><span class="o">:</span>
           <span class="n">answer</span> <span class="o">=</span> <span class="n">deleteSQL</span><span class="o">(</span><span class="n">builder</span><span class="o">);</span>
           <span class="k">break</span><span class="o">;</span>
 
-        <span class="k">case</span> <span class="nl">INSERT:</span>
+        <span class="k">case</span> <span class="n">INSERT</span><span class="o">:</span>
           <span class="n">answer</span> <span class="o">=</span> <span class="n">insertSQL</span><span class="o">(</span><span class="n">builder</span><span class="o">);</span>
           <span class="k">break</span><span class="o">;</span>
 
-        <span class="k">case</span> <span class="nl">SELECT:</span>
+        <span class="k">case</span> <span class="n">SELECT</span><span class="o">:</span>
           <span class="n">answer</span> <span class="o">=</span> <span class="n">selectSQL</span><span class="o">(</span><span class="n">builder</span><span class="o">);</span>
           <span class="k">break</span><span class="o">;</span>
 
-        <span class="k">case</span> <span class="nl">UPDATE:</span>
+        <span class="k">case</span> <span class="n">UPDATE</span><span class="o">:</span>
           <span class="n">answer</span> <span class="o">=</span> <span class="n">updateSQL</span><span class="o">(</span><span class="n">builder</span><span class="o">);</span>
           <span class="k">break</span><span class="o">;</span>
 
-        <span class="k">default</span><span class="o">:</span>
+<span class="nl">        default:</span>
           <span class="n">answer</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
       <span class="o">}</span>
 
@@ -1388,68 +1388,6 @@
                         
                     
 
-                    
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-04-09/rmi/">RMI</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-17/servlet-encode/">Servlet乱码分析</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-12/spring-security/">spring security 探秘</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-03-05/validator/">Bean Validation</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2015-02-22/javajs/">Java中用js解析json</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-12-21/webservice/">WebService</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-12-13/java-newfeature/">Java8 新特性</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-11-18/java-concurrent/">Java Concurrent</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-08-20/jvm/">Java虚拟机</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-06-26/effective/">Effective Java</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-05-12/acturl-generic/">超类中的泛型</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-04-15/fileupload/">Custom Fileupload</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-03-22/reentrantlock/">可重入锁</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2014-03-16/tomcat-https/">Tomcat Https 配置</a>
-                            </li>
-                        
-                            <li>
-                                <a href="http://hhlucky.github.io/2013-12-19/java-nio/">Java NIO</a>
-                            </li>
-                        
                     
                 </ul>
             </div>

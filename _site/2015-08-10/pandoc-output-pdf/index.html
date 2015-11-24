@@ -40,7 +40,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="http://hhlucky.github.io/">The Trees</a>
-                    <p class="navbar-text">你在暗夜里的生长延展,星星便是你结出的果子</p>
+                    <p class="navbar-text"></p>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -112,20 +112,20 @@
 
 <h3 id="安装pandoc，安装tex-live">安装pandoc，安装tex-live</h3>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> apt-get install pandoc texlive texlive-latex-extra texlive-latex-recommanded</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span>apt-get install pandoc texlive texlive-latex-extra texlive-latex-recommanded</code></pre></div>
 
 <p>注意，如果要用beamer生成幻灯片的话，则要从cabal安装。</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> apt-get install cabal-install
-<span class="lineno">2</span> cabal update
-<span class="lineno">3</span> cabal install pandoc
-<span class="lineno">4</span> <span class="nb">echo</span> <span class="s2">&quot;export PATH=&quot;</span><span class="nv">$HOME</span>/.cabal/bin:<span class="nv">$PATH</span><span class="err">&quot;</span> &gt;&gt; ~/.bashrc</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span>apt-get install cabal-install
+<span class="lineno">2 </span>cabal update
+<span class="lineno">3 </span>cabal install pandoc
+<span class="lineno">4 </span><span class="nb">echo</span> <span class="s2">&quot;export PATH=&quot;</span><span class="nv">$HOME</span>/.cabal/bin:<span class="nv">$PATH</span><span class="s2">&quot; &gt;&gt; ~/.bashrc</span></code></pre></div>
 
 <h3 id="安装中文字体">安装中文字体</h3>
 
 <p>可以用“fc-list&quot;命令查看已安装字体。使用如下命令安装gnome中文字体。</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> apt-get install apt-get install language-pack-gnome-zh*</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span>apt-get install apt-get install language-pack-gnome-zh*</code></pre></div>
 
 <p>如果有ttf文件，比如Windows的字体文件在（Windows\fonts）下，双击即可安装。</p>
 
@@ -133,19 +133,19 @@
 
 <p>使用下面命令将pandoc标准模板导出：</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> pandoc -D latex &gt; template.tex</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span>pandoc -D latex &gt; template.tex</code></pre></div>
 
 <p>在模板中找到<q>% if luatex or xetex</q>，在该语句下面插入如下代码：</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> % SUPPORT <span class="k">for</span> Chinese
-<span class="lineno">2</span>   <span class="se">\u</span>sepackage<span class="o">[</span>boldfont,slantfont,CJKsetspaces,CJKchecksingle<span class="o">]{</span>xeCJK<span class="o">}</span>
-<span class="lineno">3</span>   <span class="se">\u</span>sepackage<span class="o">{</span>fontspec,xltxtra,xunicode<span class="o">}</span>
-<span class="lineno">4</span>   <span class="se">\d</span>efaultfontfeatures<span class="o">{</span><span class="nv">Mapping</span><span class="o">=</span>tex-text,Scale<span class="o">=</span>MatchLowercase<span class="o">}</span>
-<span class="lineno">5</span> 
-<span class="lineno">6</span>   <span class="se">\p</span>unctstyle<span class="o">{</span>quanjiao<span class="o">}</span>
-<span class="lineno">7</span>   <span class="se">\s</span>etCJKmainfont<span class="o">{</span>文泉驿微米黑<span class="o">}</span> 
-<span class="lineno">8</span>   <span class="se">\s</span>etCJKsansfont<span class="o">{</span>KaiTi<span class="o">}</span>
-<span class="lineno">9</span>   <span class="se">\s</span>etCJKmonofont<span class="o">{</span>SimSun<span class="o">}</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span>% SUPPORT <span class="k">for</span> Chinese
+<span class="lineno">2 </span>  <span class="se">\u</span>sepackage<span class="o">[</span>boldfont,slantfont,CJKsetspaces,CJKchecksingle<span class="o">]{</span>xeCJK<span class="o">}</span>
+<span class="lineno">3 </span>  <span class="se">\u</span>sepackage<span class="o">{</span>fontspec,xltxtra,xunicode<span class="o">}</span>
+<span class="lineno">4 </span>  <span class="se">\d</span>efaultfontfeatures<span class="o">{</span><span class="nv">Mapping</span><span class="o">=</span>tex-text,Scale<span class="o">=</span>MatchLowercase<span class="o">}</span>
+<span class="lineno">5 </span>
+<span class="lineno">6 </span>  <span class="se">\p</span>unctstyle<span class="o">{</span>quanjiao<span class="o">}</span>
+<span class="lineno">7 </span>  <span class="se">\s</span>etCJKmainfont<span class="o">{</span>文泉驿微米黑<span class="o">}</span> 
+<span class="lineno">8 </span>  <span class="se">\s</span>etCJKsansfont<span class="o">{</span>KaiTi<span class="o">}</span>
+<span class="lineno">9 </span>  <span class="se">\s</span>etCJKmonofont<span class="o">{</span>SimSun<span class="o">}</span></code></pre></div>
 
 <p>其中<q>\setCJKmainfont</q>设置字体部分，根据系统已安装字体自行修改。</p>
 
@@ -153,7 +153,7 @@
 
 <p>在.bashrc下添加如下代码</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1</span> <span class="nb">alias </span><span class="nv">pandoc</span><span class="o">=</span><span class="s2">&quot;pandoc --template=$HOME/Templates/template.tex --latex-engine=xelatex&quot;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="lineno">1 </span><span class="nb">alias </span><span class="nv">pandoc</span><span class="o">=</span><span class="s2">&quot;pandoc --template=</span><span class="nv">$HOME</span><span class="s2">/Templates/template.tex --latex-engine=xelatex&quot;</span></code></pre></div>
 
 <p>其中，template参数表示pandoc使用的自定义模板路径，我将它放在~/Templates下。</p>
 
